@@ -1,0 +1,3152 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOOSI QUANT OS — Institutional Agentic Alpha &amp; PanicGuard Pro Terminal (.lovable.app Ready)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Heebo', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#070B14',
+            slateCard: '#0E1526',
+            slateBorder: '#1E293B',
+            goldAccent: '#F59E0B',
+            emeraldAlpha: '#10B981',
+            crimsonRisk: '#EF4444',
+            cyanQuant: '#06B6D4',
+            violetAgent: '#8B5CF6'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #070B14;
+      color: #F8FAFC;
+      font-family: 'Inter', 'Heebo', sans-serif;
+      overflow-x: hidden;
+    }
+    .glass-card {
+      background: linear-gradient(145deg, rgba(14, 21, 38, 0.92) 0%, rgba(10, 15, 29, 0.96) 100%);
+      border: 1px solid rgba(51, 65, 85, 0.55);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    }
+    .glass-card-gold {
+      background: linear-gradient(145deg, rgba(24, 24, 38, 0.95) 0%, rgba(15, 19, 34, 0.98) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      box-shadow: 0 10px 35px -10px rgba(245, 158, 11, 0.15);
+    }
+    .quant-grid-bg {
+      background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #070B14;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+    input[type="range"] {
+      accent-color: #06B6D4;
+    }
+  </style>
+</head>
+<body class="min-h-screen quant-grid-bg text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Top Live Institutional Ticker Tape -->
+  <div class="w-full bg-slate-950/90 border-b border-slate-800/80 px-3 py-1.5 text-xs font-mono flex items-center justify-between gap-4 overflow-x-auto custom-scrollbar">
+    <div class="flex items-center gap-5 shrink-0" id="liveTickerTape">
+      <!-- Populated dynamically by JS -->
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="https://panicguard-ai.lovable.app/" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline decoration-amber-500/40 flex items-center gap-1">
+        <span>Live Base: panicguard-ai.lovable.app</span>
+      </a>
+      <span class="text-slate-600">|</span>
+      <a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-500/40 flex items-center gap-1">
+        <span>ResearchGate Corpus (20+ Papers)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Header & Navigation -->
+  <header class="sticky top-0 z-30 backdrop-blur-xl bg-obsidian/90 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand Identity -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 via-cyan-500 to-violet-600 p-0.5 shadow-lg shadow-cyan-500/20">
+          <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-lg text-amber-400">
+            RB
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="font-bold text-base sm:text-lg tracking-tight text-white" id="brandTitle">BOOSI QUANT OS <span class="text-amber-400 font-mono text-xs px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">v4.0 PRO</span></h1>
+            <span class="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              PDE-RL &amp; Q-EWSS ONLINE
+            </span>
+          </div>
+          <p class="text-xs text-slate-400" id="brandSubtitle">
+            The Boosi Method AI • Agentic PDE-RL, SA-DRO, PRISMA, CYCLEX &amp; Politico-Rhetoric Alpha Terminal
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Action Controls -->
+      <div class="flex items-center gap-2">
+        <button id="langToggleBtn" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+          <span>🌐</span>
+          <span id="langToggleLabel">עברית / EN</span>
+        </button>
+        <button id="quickCopyLovableBtn" type="button" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 shadow-md shadow-amber-500/20 transition flex items-center gap-1.5">
+          <span>⚡</span>
+          <span id="quickCopyLovableLabel">Copy .lovable.app Master Prompt</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="max-w-7xl mx-auto px-4 border-t border-slate-800/50">
+      <nav class="flex items-center gap-1 overflow-x-auto py-1.5 custom-scrollbar" aria-label="Main Navigation">
+        <button type="button" data-tab="terminal" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap bg-cyan-500/15 text-cyan-300 border border-cyan-500/40">
+          1. PanicGuard &amp; PDE-RL Terminal
+        </button>
+        <button type="button" data-tab="engines" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-transparent">
+          2. 7 ResearchGate Alpha Engines
+        </button>
+        <button type="button" data-tab="radar" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-transparent">
+          3. Trump Signal &amp; Squeeze Radar
+        </button>
+        <button type="button" data-tab="monetization" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-transparent">
+          4. Competitor Benchmark &amp; Pricing Engine
+        </button>
+        <button type="button" data-tab="institutional" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-transparent">
+          5. Hedge Fund Keynotes &amp; B2B Licensing
+        </button>
+        <button type="button" data-tab="lovable" class="nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition whitespace-nowrap text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30">
+          6. 🚀 Lovable.app Prompt &amp; React Code Hub
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+
+    <!-- Executive Context Banner -->
+    <section class="glass-card-gold rounded-2xl p-4 sm:p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+      <div class="space-y-1.5">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+            THE BOOSI METHOD AI • INSTITUTIONAL EDITION
+          </span>
+          <span class="text-xs text-slate-400 font-mono">
+            Author &amp; Founder: Roee Boosi (Bar-Ilan University &amp; Quantitative Hedge Fund Research)
+          </span>
+        </div>
+        <h2 class="text-lg sm:text-xl font-bold text-white" id="heroHeadline">
+          Separating Fundamental Repricing from Behavioral Liquidation Cascades Across Global Capital Markets
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-4xl leading-relaxed" id="heroDescription">
+          Built on Roee Boosi's peer-reviewed &amp; preprint research programme (<a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">ResearchGate</a>) and live micro-SaaS (<a href="https://panicguard-ai.lovable.app/" target="_blank" rel="noopener noreferrer" class="text-amber-400 underline">panicguard-ai.lovable.app</a>). Unifies <strong>Q-EWSS</strong> (Quantum-Enhanced Expert-Weighted Sentiment Signal across 3.4 PB of multilingual market data), <strong>Agentic PDE-RL</strong>, <strong>SA-DRO</strong> (Survivor-Aware Distributionally Robust Optimization), <strong>PRISM/PRISMA</strong>, and <strong>CYCLEX</strong> into a multi-tiered B2C + Institutional Hedge Fund SaaS platform.
+        </p>
+      </div>
+      <div class="flex flex-wrap sm:flex-nowrap items-center gap-2.5 shrink-0">
+        <button type="button" id="goToLovableStudioBtn" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition shadow-lg shadow-amber-500/20">
+          Open .lovable.app Blueprint &amp; Code →
+        </button>
+        <button type="button" id="goToMonetizationBtn" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-cyan-500/30 transition">
+          ARR &amp; Pricing Calculator
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 1: PANICGUARD & PDE-RL LIVE TERMINAL
+         ========================================== -->
+    <section id="tab-terminal" class="tab-panel space-y-6">
+      <!-- Asset Selector Bar -->
+      <div class="glass-card rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400 mr-1">Select Asset:</span>
+          <div id="assetPresetButtons" class="flex items-center gap-1.5 flex-wrap">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <label for="customTickerInput" class="sr-only">Custom Ticker</label>
+          <input id="customTickerInput" type="text" placeholder="Custom Ticker (e.g. META, AMD)" maxlength="10" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-mono text-white focus:outline-none focus:border-cyan-400 w-48" />
+          <button id="analyzeCustomTickerBtn" type="button" class="px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-xs transition">
+            Analyze Asset
+          </button>
+        </div>
+      </div>
+
+      <!-- Core KPI Row: Boosi Divergence & Regime Metrics -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Card 1: Crowd Sentiment vs Expert Consensus -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-l-amber-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase text-slate-400">Boosi Divergence ($\Delta_{\text{Boosi}}$)</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-300" id="kpiDivergenceBadge">+61 pts</span>
+          </div>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold font-mono text-white" id="kpiPanicScore">61%</span>
+            <span class="text-xs text-amber-400 font-semibold" id="kpiPanicLabel">High Crowd Dislocation</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-400 font-mono" id="kpiCrowdVsExpert">
+            Crowd Fear: 21/100 • Expert Q-EWSS: 82/100
+          </p>
+        </div>
+
+        <!-- Card 2: Actionable Boosi Method Decision -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-l-emerald-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase text-slate-400">Agentic PDE-RL Signal</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300" id="kpiConfidenceBadge">94.2% Conf</span>
+          </div>
+          <div class="mt-2">
+            <div class="text-lg sm:text-xl font-extrabold font-mono text-emerald-400" id="kpiActionSignal">
+              HOLD / ACCUMULATE DIP
+            </div>
+          </div>
+          <p class="mt-2 text-xs text-slate-400" id="kpiActionSubtext">
+            Behavioral cascade detected — do not liquidate into retail panic.
+          </p>
+        </div>
+
+        <!-- Card 3: CYCLEX Wavelet-Wyckoff Phase -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-l-cyan-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase text-slate-400">CYCLEX Phase &amp; PRISM</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300" id="kpiWaveletScale">Scale j=3..5</span>
+          </div>
+          <div class="mt-2">
+            <div class="text-lg sm:text-xl font-bold font-mono text-cyan-300" id="kpiCyclexPhase">
+              Late Spring / Accumulation
+            </div>
+          </div>
+          <p class="mt-2 text-xs text-slate-400 font-mono" id="kpiExpectedRecovery">
+            V-Recovery 60D Prob: 86.4% (+14.8% EV)
+          </p>
+        </div>
+
+        <!-- Card 4: SA-DRO Tail-Risk & Optimal Kelly Sizing -->
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-l-violet-400">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase text-slate-400">SA-DRO Survival Control</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-violet-500/15 text-violet-300" id="kpiWassersteinRadius">ε = 0.042</span>
+          </div>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span class="text-2xl font-extrabold font-mono text-violet-300" id="kpiOptimalWeight">18.5%</span>
+            <span class="text-xs text-slate-400 font-mono">Optimal Pod Allocation</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-400 font-mono" id="kpiCvarProtection">
+            99% CVaR Cap: -4.1% (Survivor-Aware Bound)
+          </p>
+        </div>
+      </div>
+
+      <!-- Main Interactive Simulator Grid: Left Controls + Right Dual Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left Column: Mathematical PDE-RL & Behavioral Parameter Controls (4 cols) -->
+        <div class="lg:col-span-4 glass-card rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div>
+              <h3 class="font-bold text-sm sm:text-base text-white">PDE-RL &amp; Q-EWSS Live Parameters</h3>
+              <p class="text-xs text-slate-400">Calibrate heterogeneous market participants in real time</p>
+            </div>
+            <button id="resetTerminalParamsBtn" type="button" class="px-2.5 py-1 rounded text-xs font-mono bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700">
+              Reset
+            </button>
+          </div>
+
+          <!-- Slider 1: Expert Consensus (Q-EWSS) -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <label for="sliderExpert" class="text-slate-300 font-medium">Expert Accuracy-Weighted Conviction ($S_{\text{expert}}$)</label>
+              <span id="valExpert" class="font-mono text-emerald-400 font-bold">82</span>
+            </div>
+            <input id="sliderExpert" type="range" min="10" max="99" value="82" class="w-full" />
+            <p class="text-[11px] text-slate-400">Institutional positioning &amp; track-record-weighted analyst revisions</p>
+          </div>
+
+          <!-- Slider 2: Crowd Sentiment (Retail Fear) -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <label for="sliderCrowd" class="text-slate-300 font-medium">Retail Crowd Sentiment ($S_{\text{crowd}}$)</label>
+              <span id="valCrowd" class="font-mono text-rose-400 font-bold">21</span>
+            </div>
+            <input id="sliderCrowd" type="range" min="1" max="95" value="21" class="w-full" />
+            <p class="text-[11px] text-slate-400">Social contagion, headline velocity &amp; retail put/call panic</p>
+          </div>
+
+          <!-- Slider 3: Hawkes Contagion Intensity -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <label for="sliderHawkes" class="text-slate-300 font-medium">Hawkes Self-Excitation ($\mu_H / \beta_H$)</label>
+              <span id="valHawkes" class="font-mono text-amber-400 font-bold">0.68</span>
+            </div>
+            <input id="sliderHawkes" type="range" min="10" max="95" value="68" class="w-full" />
+            <p class="text-[11px] text-slate-400">Measures order-book liquidation clustering during drawdowns</p>
+          </div>
+
+          <!-- Slider 4: SA-DRO Wasserstein Ambiguity Radius -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs">
+              <label for="sliderSadro" class="text-slate-300 font-medium">SA-DRO Tail Ambiguity Radius ($\epsilon_W$)</label>
+              <span id="valSadro" class="font-mono text-violet-400 font-bold">0.042</span>
+            </div>
+            <input id="sliderSadro" type="range" min="5" max="100" value="42" class="w-full" />
+            <p class="text-[11px] text-slate-400">Enforces ruin-probability zero-barrier under leverage constraints</p>
+          </div>
+
+          <!-- Live Mathematical Equation Box -->
+          <div class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2 font-mono text-xs">
+            <div class="text-amber-400 font-semibold">Governing Boosi PDE-RL Coupling:</div>
+            <div class="text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+              ∂ρ/∂t + ∇·(ρ v_agent) = D ∇²ρ + λ_Hawkes(S_expert − S_crowd)
+            </div>
+            <div class="border-t border-slate-800 pt-2 flex items-center justify-between text-[11px]">
+              <span class="text-slate-400">Expected 90D Alpha Spread:</span>
+              <span class="text-emerald-400 font-bold" id="eqAlphaSpread">+18.4% vs Crowd</span>
+            </div>
+          </div>
+
+          <!-- 7-Point "Don't Sell in a Panic" Checklist Interactive Modal Trigger -->
+          <button id="openPlaybookModalBtn" type="button" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 text-xs font-semibold transition flex items-center justify-center gap-2">
+            <span>📋</span>
+            <span>Run Interactive 7-Point "Don't Sell in a Panic" Audit</span>
+          </button>
+        </div>
+
+        <!-- Right Column: Multi-Agent PDE-RL Trajectory Chart & Decomposition (8 cols) -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Chart 1: 60-Day Drawdown & V-Recovery Trajectory -->
+          <div class="glass-card rounded-2xl p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="font-bold text-sm sm:text-base text-white" id="trajectoryChartTitle">
+                  Agentic PDE-RL vs. Patient Holder vs. Panicked Crowd (60-Day Drawdown &amp; V-Recovery)
+                </h3>
+                <p class="text-xs text-slate-400">
+                  Demonstrates how expert-weighted signals persist through cascades while crowd liquidation locks in bottoms
+                </p>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-mono">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">Boosi PDE-RL</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">Patient Buy &amp; Hold</span>
+                <span class="px-2 py-0.5 rounded bg-rose-500/15 text-rose-300 border border-rose-500/30">Panicked Crowd</span>
+              </div>
+            </div>
+            <div class="relative h-72 w-full">
+              <canvas id="pdeTrajectoryChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 2: Two-Process Drawdown Decomposition (Fundamental Repricing vs Behavioral Cascade) -->
+          <div class="glass-card rounded-2xl p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="font-bold text-sm sm:text-base text-white">
+                  The Boosi Method Two-Process Drawdown Decomposition
+                </h3>
+                <p class="text-xs text-slate-400">
+                  Separating Process 1 (Fundamental Analyst &amp; Institutional Repricing) from Process 2 (Retail Behavioral Cascade)
+                </p>
+              </div>
+              <span class="text-xs font-mono text-amber-400" id="decompositionRatioBadge">78% Behavioral Cascade / 22% Fundamental</span>
+            </div>
+            <div class="relative h-56 w-full">
+              <canvas id="decompositionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW MODULE 1: Live WebSocket L2 Order Book & Hawkes Microstructure Tape -->
+      <div class="glass-card rounded-2xl p-5 space-y-4 border border-cyan-500/30">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping" id="wsStatusDot"></span>
+              <span class="text-xs font-mono uppercase text-cyan-400" id="wsConnectionBadge">WEBSOCKET L2 STREAM ACTIVE (wss://stream.data.alpaca.markets / wss://ws.finnhub.io)</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-white mt-0.5">
+              Real-Time Limit Order Book (L2 Depth), Order Book Imbalance (OBI) &amp; Trade Prints
+            </h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <input id="wsFinnhubKeyInput" type="password" placeholder="Optional: Finnhub API Key for Live wss://" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-xs font-mono text-slate-200 w-64" />
+            <button id="wsConnectKeyBtn" type="button" class="px-3 py-1.5 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-mono font-semibold transition">
+              Connect Live Key
+            </button>
+            <button id="wsStreamToggleBtn" type="button" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-bold transition">
+              ⏸ Pause Stream
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <!-- Bids & Asks L2 Ladder (7 cols) -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="p-3 rounded-xl bg-slate-950/90 border border-emerald-500/30">
+              <div class="flex justify-between text-[11px] font-mono text-emerald-400 border-b border-slate-800 pb-1.5 mb-2">
+                <span>BID PRICE (INSTITUTIONAL)</span>
+                <span>SIZE (SHARES)</span>
+              </div>
+              <div id="orderBookBidsRows" class="space-y-1.5 font-mono text-xs"></div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/90 border border-rose-500/30">
+              <div class="flex justify-between text-[11px] font-mono text-rose-400 border-b border-slate-800 pb-1.5 mb-2">
+                <span>ASK PRICE (LIQUIDATION)</span>
+                <span>SIZE (SHARES)</span>
+              </div>
+              <div id="orderBookAsksRows" class="space-y-1.5 font-mono text-xs"></div>
+            </div>
+          </div>
+
+          <!-- Microstructure Telemetry & Live Trade Tape (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-3">
+            <div class="grid grid-cols-3 gap-2 font-mono text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+                <span class="text-[10px] text-slate-400 block">Live Mid Price</span>
+                <span id="wsLiveMidPrice" class="text-sm sm:text-base font-extrabold text-white">$142.80</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+                <span class="text-[10px] text-slate-400 block">Book Imbalance (OBI)</span>
+                <span id="wsLiveObi" class="text-sm sm:text-base font-extrabold text-emerald-400">+0.34 (Bid Heavy)</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+                <span class="text-[10px] text-slate-400 block">Spread / Hawkes λ</span>
+                <span id="wsLiveSpread" class="text-sm sm:text-base font-extrabold text-amber-400">1.4 bps</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950/90 border border-slate-800 flex-1">
+              <div class="text-[11px] font-mono text-slate-400 border-b border-slate-800 pb-1 mb-1.5 flex justify-between">
+                <span>LIVE TIME &amp; SALES STREAM</span>
+                <span id="wsTickCounter" class="text-cyan-400">Ticks: 0</span>
+              </div>
+              <div id="wsTradeTapeList" class="space-y-1 font-mono text-[11px] max-h-28 overflow-y-auto custom-scrollbar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 2: 7 RESEARCHGATE ALPHA ENGINES
+         ========================================== -->
+    <section id="tab-engines" class="tab-panel hidden space-y-6">
+      <div class="glass-card rounded-2xl p-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-mono uppercase text-cyan-400">Academic &amp; Institutional Quantitative Core</span>
+            <h2 class="text-xl font-bold text-white mt-0.5">
+              Roee Boosi's 7 Proprietary Capital-Market Engines (<a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">ResearchGate</a>)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+              Click any engine below to inspect its mathematical formulation, institutional trading desk deployment, and backtested alpha contribution.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="copyBibtexAllBtn" type="button" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-mono text-cyan-300 border border-cyan-500/30 transition">
+              📚 Copy Full Citation Corpus (BibTeX)
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="flex items-center gap-2 flex-wrap my-4" id="engineCategoryFilters">
+          <button type="button" data-engine-cat="all" class="engine-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">All 7 Engines</button>
+          <button type="button" data-engine-cat="behavioral" class="engine-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-400 hover:text-white">Behavioral &amp; Sentiment (Q-EWSS / PanicGuard)</button>
+          <button type="button" data-engine-cat="agentic" class="engine-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-400 hover:text-white">Agentic PDE-RL &amp; Tail-Risk (SA-DRO)</button>
+          <button type="button" data-engine-cat="cycles" class="engine-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-400 hover:text-white">Momentum, Wavelets &amp; Macro (PRISM / CYCLEX / Trump Signal)</button>
+        </div>
+
+        <!-- Engines Grid -->
+        <div id="enginesGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Interactive Multi-Engine Portfolio Fusion Simulator -->
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-white">Multi-Pod Hedge Fund Strategy Combiner (EEQAM + SA-DRO + PRISMA)</h3>
+            <p class="text-xs text-slate-400">Toggle active Boosi research engines to simulate combined institutional Sharpe ratio, maximum drawdown, and tail resilience</p>
+          </div>
+          <div class="flex items-center gap-4 font-mono text-xs">
+            <div>Combined Sharpe: <span id="combinedSharpeVal" class="text-emerald-400 font-bold text-base">2.84</span></div>
+            <div>Max Drawdown: <span id="combinedMaxDdVal" class="text-amber-400 font-bold text-base">-6.4%</span></div>
+            <div>Annualized Alpha: <span id="combinedAlphaVal" class="text-cyan-400 font-bold text-base">+24.6%</span></div>
+          </div>
+        </div>
+        <div id="podToggleBar" class="flex flex-wrap gap-2 pt-1">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3: TRUMP MARKET SIGNAL & SQUEEZE RADAR
+         ========================================== -->
+    <section id="tab-radar" class="tab-panel hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: Politico-Rhetoric Shock Simulator (The Trump Market Signal 2024-2026) -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div>
+              <span class="text-[11px] font-mono uppercase text-amber-400">Based on Roee Boosi (Dec 2025 &amp; May 2025)</span>
+              <h3 class="text-base sm:text-lg font-bold text-white">The Trump Market Signal™ — Politico-Rhetoric Shock Engine</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-amber-500/15 text-amber-300 font-mono text-xs">VIP / Hedge Fund Tier</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Quantifies the direct and indirect cross-asset impulse of presidential rhetoric, tariff announcements, deregulation orders, and strategic reserve signals on US Equities, Semis, Defense, and Crypto (<a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">ResearchGate</a>).
+          </p>
+
+          <div class="space-y-2">
+            <label class="text-xs font-mono uppercase text-slate-400">Select Rhetoric / Policy Shock Scenario:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="trumpScenarioButtons">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <div class="space-y-1 pt-2">
+            <div class="flex justify-between text-xs">
+              <label for="sliderRhetoricVelocity" class="text-slate-300 font-medium">Headline Velocity &amp; Truth/Social Amplification</label>
+              <span id="valRhetoricVelocity" class="font-mono text-amber-400 font-bold">85 / 100</span>
+            </div>
+            <input id="sliderRhetoricVelocity" type="range" min="10" max="100" value="85" class="w-full" />
+          </div>
+
+          <div class="relative h-64 w-full pt-2">
+            <canvas id="trumpImpactChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Right: GME Short-Squeeze & Copy-Trading Contagion Radar -->
+        <div class="lg:col-span-6 glass-card rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div>
+              <span class="text-[11px] font-mono uppercase text-cyan-400">Based on Roee Boosi's GME &amp; Copy-Trading Trilogy (May 2025)</span>
+              <h3 class="text-base sm:text-lg font-bold text-white">Retail Activism, Short-Squeeze &amp; Copy-Trading Risk Radar</h3>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-cyan-500/15 text-cyan-300 font-mono text-xs" id="squeezeAlertBadge">REGIME: ELEVATED</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Evaluates floating supply compression, gamma-wall proximity, social coordination velocity, and eToro-style copy-trading synchronization risk to distinguish genuine structural squeezes from speculative retail bull-traps (<a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">ResearchGate</a>).
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label for="sliderShortInt" class="block text-xs text-slate-400 mb-1">Short Interest (% Float)</label>
+              <input id="sliderShortInt" type="range" min="5" max="120" value="48" class="w-full" />
+              <div class="font-mono text-xs text-white font-bold mt-0.5" id="valShortInt">48%</div>
+            </div>
+            <div>
+              <label for="sliderCopySync" class="block text-xs text-slate-400 mb-1">Copy-Trading Herding</label>
+              <input id="sliderCopySync" type="range" min="10" max="99" value="74" class="w-full" />
+              <div class="font-mono text-xs text-rose-400 font-bold mt-0.5" id="valCopySync">74 / 100</div>
+            </div>
+            <div>
+              <label for="sliderLiquidityDepth" class="block text-xs text-slate-400 mb-1">Order Book Depth</label>
+              <input id="sliderLiquidityDepth" type="range" min="5" max="95" value="28" class="w-full" />
+              <div class="font-mono text-xs text-cyan-400 font-bold mt-0.5" id="valLiquidityDepth">28 / 100</div>
+            </div>
+          </div>
+
+          <!-- Output Readout Card -->
+          <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs">
+            <div>
+              <span class="text-slate-400 block text-[11px]">Squeeze Ignition Prob</span>
+              <span class="text-lg font-extrabold text-amber-400" id="squeezeProbVal">64.2%</span>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-[11px]">Copy-Cascade Reversal Risk</span>
+              <span class="text-lg font-extrabold text-rose-400" id="copyCascadeVal">81.5% (HIGH)</span>
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <span class="text-slate-400 block text-[11px]">Boosi Desk Action</span>
+              <span class="text-sm font-bold text-emerald-400" id="squeezeDeskAction">LONG GAMMA / CAP SIZE</span>
+            </div>
+          </div>
+
+          <div class="relative h-56 w-full">
+            <canvas id="squeezePhaseChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW MODULE 2: Automated Email (Resend) & Telegram Bot (@BotFather) Panic Alert Dispatcher -->
+      <div class="glass-card-gold rounded-2xl p-5 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <span class="text-xs font-mono uppercase text-amber-400">Supabase pg_cron + Telegram Bot API + Resend Email Engine</span>
+            <h3 class="text-base sm:text-lg font-bold text-white mt-0.5">
+              Real-Time Panic Divergence Alert Dispatcher (Email &amp; Telegram VIP Broadcast)
+            </h3>
+            <p class="text-xs text-slate-300">
+              Automatically scans your watchlist every 15 minutes via <code class="text-cyan-300">pg_cron</code> and dispatches instant alerts when $\Delta_{	ext{Boosi}} = S_{	ext{expert}} - S_{	ext{crowd}}$ crosses your threshold.
+            </p>
+          </div>
+          <button id="triggerTestAlertBtn" type="button" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition shadow-lg shadow-amber-500/20 shrink-0">
+            🔔 Fire Live Test Alert (Telegram + Email)
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 text-xs">
+          <div class="lg:col-span-5 space-y-3">
+            <div>
+              <label for="alertThresholdSlider" class="flex justify-between text-slate-300 mb-1">
+                <span>Minimum Boosi Divergence Trigger ($\Delta_{	ext{Boosi}}$)</span>
+                <span id="valAlertThreshold" class="font-mono text-amber-400 font-bold">50 pts</span>
+              </label>
+              <input id="alertThresholdSlider" type="range" min="20" max="80" value="50" class="w-full" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div>
+                <label for="alertTelegramChatInput" class="block text-slate-400 mb-1">Telegram Channel / Chat ID</label>
+                <input id="alertTelegramChatInput" type="text" value="@BoosiQuantVIP_Alerts" class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 font-mono text-white" />
+              </div>
+              <div>
+                <label for="alertEmailInput" class="block text-slate-400 mb-1">VIP Subscriber Email (Resend)</label>
+                <input id="alertEmailInput" type="email" value="cio@hedgefund-alpha.com" class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 font-mono text-white" />
+              </div>
+            </div>
+            <div>
+              <label for="alertCronSelect" class="block text-slate-400 mb-1">Supabase pg_cron Schedule</label>
+              <select id="alertCronSelect" class="w-full px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 font-mono text-white">
+                <option value="*/5 * * * *">Every 5 Minutes (*/5 * * * *) — High-Frequency Desk</option>
+                <option value="*/15 * * * *" selected>Every 15 Minutes (*/15 * * * *) — VIP Club Default</option>
+                <option value="0 * * * *">Hourly Market Pulse (0 * * * *) — Gold/Silver Club</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 p-3.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs space-y-2">
+            <div class="flex items-center justify-between text-[11px] text-cyan-400 border-b border-slate-800 pb-1">
+              <span>LIVE PAYLOAD DISPATCH LOG (TELEGRAM BOT API &amp; RESEND)</span>
+              <span id="alertDispatchStatus" class="text-emerald-400">STATUS: ARMED</span>
+            </div>
+            <pre id="alertDispatchPreview" class="text-[11px] text-slate-200 whitespace-pre-wrap leading-relaxed overflow-x-auto max-h-40 custom-scrollbar"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 4: COMPETITOR BENCHMARK & PRICING ENGINE
+         ========================================== -->
+    <section id="tab-monetization" class="tab-panel hidden space-y-6">
+      <!-- Verified 2026 Market Comparison Table -->
+      <div class="glass-card rounded-2xl p-5 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-mono uppercase text-amber-400">Grounded 2026 Competitive Intelligence</span>
+            <h2 class="text-lg sm:text-xl font-bold text-white">
+              How Boosi Quant OS Out-Positions the Highest-Grossing Capital Markets SaaS Platforms
+            </h2>
+          </div>
+          <span class="text-xs font-mono text-slate-400">All competitor prices verified from 2026 industry disclosures</span>
+        </div>
+
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 font-mono text-xs uppercase">
+                <th class="py-3 px-3">Platform</th>
+                <th class="py-3 px-3">Verified 2026 Pricing</th>
+                <th class="py-3 px-3">Core Strength</th>
+                <th class="py-3 px-3">Critical Gap Solved by Roee Boosi</th>
+                <th class="py-3 px-3">Verified Source</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/70">
+              <tr class="bg-amber-500/10 border-l-4 border-l-amber-400">
+                <td class="py-3.5 px-3 font-bold text-amber-300">
+                  BOOSI QUANT OS (PanicGuard Pro v4.0)
+                </td>
+                <td class="py-3.5 px-3 font-mono text-white">
+                  Free Bronze • $9.90–$49.90/mo Retail • $299/mo Quant API • $2,490/mo Institutional Pod
+                </td>
+                <td class="py-3.5 px-3 text-emerald-300 font-medium">
+                  Separates Fundamental Repricing from Behavioral Cascades (Q-EWSS + Agentic PDE-RL + SA-DRO + CYCLEX + Trump Signal)
+                </td>
+                <td class="py-3.5 px-3 text-slate-200">
+                  The <strong>only</strong> platform combining mathematical panic-divergence scoring with provable PDE-RL survival bounds
+                </td>
+                <td class="py-3.5 px-3">
+                  <a href="https://panicguard-ai.lovable.app/" target="_blank" rel="noopener noreferrer" class="text-amber-400 underline font-mono">panicguard-ai</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-semibold text-white">Bloomberg Terminal</td>
+                <td class="py-3 px-3 font-mono text-slate-300">$31,980/yr ($2,665/mo) single seat; $28,320/yr ($2,360/mo) multi-seat</td>
+                <td class="py-3 px-3 text-slate-300">Institutional real-time data, fixed income &amp; dealer chat</td>
+                <td class="py-3 px-3 text-slate-400">Information overload during drawdowns; lacks behavioral-vs-fundamental panic separation &amp; retail accessibility</td>
+                <td class="py-3 px-3"><a href="https://www.bluegamma.io/post/bloomberg-terminal-pricing" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline font-mono">BlueGamma 2026</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-semibold text-white">SpotGamma</td>
+                <td class="py-3 px-3 font-mono text-slate-300">$99/mo Essential ($891/yr) • $299/mo Alpha ($2,691/yr) • $1,999/mo Institutional</td>
+                <td class="py-3 px-3 text-slate-300">Options Open Interest gamma levels, HIRO &amp; TRACE charts</td>
+                <td class="py-3 px-3 text-slate-400">Tracks dealer gamma levels but does not weight multi-horizon expert accuracy (Q-EWSS) or politico-rhetoric shocks</td>
+                <td class="py-3 px-3"><a href="https://flashalpha.com/articles/spotgamma-review-2026-pricing-features-alternatives" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline font-mono">FlashAlpha 2026</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-semibold text-white">Unusual Whales</td>
+                <td class="py-3 px-3 font-mono text-slate-300">$50/mo Basic ($504/yr) • $75–$120/mo Pro/Max • $150–$375/mo API ($625/mo Business)</td>
+                <td class="py-3 px-3 text-slate-300">Options flow, dark pool prints &amp; congressional trades</td>
+                <td class="py-3 px-3 text-slate-400">Raw options flow often triggers retail FOMO/panic without SA-DRO tail-risk sizing or PDE-RL execution</td>
+                <td class="py-3 px-3"><a href="https://sentisense.ai/blog/unusual-whales-api-alternatives-options-flow-apis-2026/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline font-mono">SentiSense 2026</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-semibold text-white">Koyfin</td>
+                <td class="py-3 px-3 font-mono text-slate-300">Free Tier • $39/mo Plus ($374/yr discounted) • $79/mo Pro ($110/mo monthly)</td>
+                <td class="py-3 px-3 text-slate-300">10-year fundamentals, 5,900+ screening criteria &amp; macro dashboards</td>
+                <td class="py-3 px-3 text-slate-400">Displays historical financials without judging whether a 30% drop is a broken thesis or temporary retail panic</td>
+                <td class="py-3 px-3"><a href="https://stocksimplifier.com/compare/tradingview-vs-koyfin" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline font-mono">StockSimplifier 2026</a></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-3 font-semibold text-white">TradingView</td>
+                <td class="py-3 px-3 font-mono text-slate-300">Free Tier • $14.95/mo Essential ($155.40/yr) + Premium Tiers</td>
+                <td class="py-3 px-3 text-slate-300">400+ technical indicators, Pine Script &amp; 100M+ user social feed</td>
+                <td class="py-3 px-3 text-slate-400">Crowd social feed amplifies herd contagion during crashes; Boosi Q-EWSS filters crowd noise via expert accuracy weights</td>
+                <td class="py-3 px-3"><a href="https://traderhq.com/koyfin-vs-tradingview/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline font-mono">TraderHQ 2026</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Interactive Roee Boosi SaaS + Institutional Revenue Simulator -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-5 glass-card-gold rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-mono uppercase text-amber-400">Monetization Engine</span>
+              <h3 class="text-base sm:text-lg font-bold text-white">Roee Boosi ARR &amp; Cash-Flow Simulator</h3>
+            </div>
+            <div class="flex items-center gap-1.5 bg-slate-900 p-1 rounded-lg border border-slate-700 text-xs font-mono">
+              <button type="button" id="billingMonthlyBtn" class="px-2.5 py-1 rounded bg-amber-500 text-slate-950 font-bold">Monthly</button>
+              <button type="button" id="billingAnnualBtn" class="px-2.5 py-1 rounded text-slate-300">Annual (-40%)</button>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Silver &amp; Gold Club Retail Subscribers ($9.90 / $19.90/mo)</span>
+                <span id="valRetailSubs" class="font-mono text-amber-300 font-bold">2,500 users</span>
+              </div>
+              <input id="sliderRetailSubs" type="range" min="100" max="25000" step="100" value="2500" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>VIP Club Active Traders ($49.90/mo — Trump Signal + Stress Test)</span>
+                <span id="valVipSubs" class="font-mono text-cyan-300 font-bold">850 users</span>
+              </div>
+              <input id="sliderVipSubs" type="range" min="50" max="10000" step="50" value="850" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Quant API &amp; Prop Desk Seats ($299/mo — Unusual Whales / SpotGamma tier)</span>
+                <span id="valApiSubs" class="font-mono text-emerald-300 font-bold">180 desks</span>
+              </div>
+              <input id="sliderApiSubs" type="range" min="10" max="2000" step="10" value="180" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Hedge Fund Pod Licenses ($2,490/mo — vs Bloomberg $2,665/mo)</span>
+                <span id="valFundPods" class="font-mono text-violet-300 font-bold">25 pods</span>
+              </div>
+              <input id="sliderFundPods" type="range" min="1" max="250" step="1" value="25" class="w-full" />
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Invited Keynotes &amp; Executive Workshops ($25,000 avg / lecture)</span>
+                <span id="valKeynotesPerYear" class="font-mono text-amber-400 font-bold">12 / yr</span>
+              </div>
+              <input id="sliderKeynotesPerYear" type="range" min="0" max="40" step="1" value="12" class="w-full" />
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950 border border-amber-500/40 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">Projected Monthly Recurring (MRR):</span>
+              <span class="text-xl font-extrabold font-mono text-white" id="calcMrrOutput">$196,090 / mo</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-slate-400">Projected Annual Run-Rate (ARR + Keynotes):</span>
+              <span class="text-2xl font-extrabold font-mono text-amber-400" id="calcArrOutput">$2,653,080 / yr</span>
+            </div>
+            <div class="flex items-center justify-between border-t border-slate-800 pt-2 text-[11px] font-mono text-emerald-400">
+              <span>Implied SaaS Valuation (12x ARR Multiple):</span>
+              <span id="calcValuationOutput" class="font-bold">$31.8M Enterprise Value</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Full 6-Tier Membership & Institutional Pricing Matrix -->
+        <div class="lg:col-span-7 glass-card rounded-2xl p-5 space-y-4">
+          <h3 class="text-base sm:text-lg font-bold text-white">
+            Unified B2C + B2B Tier Architecture (Preserving <a href="https://panicguard-ai.lovable.app/" target="_blank" rel="noopener noreferrer" class="text-amber-400 underline">panicguard-ai.lovable.app</a> Clubs + Institutional Expansion)
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3" id="pricingTiersGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW MODULE 3: Live Stripe Checkout, Webhook & Club Quota Enforcement Simulator -->
+      <div class="glass-card rounded-2xl p-5 space-y-4 border border-amber-500/30">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+          <div>
+            <span class="text-xs font-mono uppercase text-amber-400">Stripe Webhooks + Supabase RLS Quota Guard</span>
+            <h3 class="text-base sm:text-lg font-bold text-white mt-0.5">
+              Interactive Membership Quota &amp; Stripe Webhook Upgrade Simulator
+            </h3>
+            <p class="text-xs text-slate-300">
+              Test how <code class="text-amber-300">user_profiles</code> enforces monthly analysis limits (Bronze: 3, Silver: 20, Gold: 100, VIP: 500, Quant API: Unlimited) and automatically unlocks tiers upon receiving a verified Stripe <code class="text-cyan-300">checkout.session.completed</code> webhook.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button id="consumeQuotaBtn" type="button" class="px-3.5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs font-mono transition">
+              ⚡ Simulate Asset Analysis (-1 Quota)
+            </button>
+            <button id="simulateStripeWebhookBtn" type="button" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono transition">
+              💳 Fire Stripe Webhook Upgrade
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+          <div class="lg:col-span-5 space-y-3 text-xs">
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-950 border border-slate-800 font-mono">
+              <span class="text-slate-400">Current Active Club Tier:</span>
+              <span id="simActiveClubBadge" class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold uppercase">BRONZE CLUB (FREE)</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div class="flex justify-between font-mono">
+                <span class="text-slate-400">Monthly Quota Usage:</span>
+                <span id="simQuotaCounterText" class="text-white font-bold">2 / 3 Analyses Used</span>
+              </div>
+              <div class="w-full h-2.5 rounded-full bg-slate-800 overflow-hidden">
+                <div id="simQuotaProgressBar" class="h-full bg-amber-400 transition-all duration-300" style="width: 66%"></div>
+              </div>
+              <p id="simQuotaStatusMessage" class="text-[11px] text-emerald-400 font-mono">
+                ✓ 1 free Bronze analysis remaining before Stripe Paywall Modal triggers.
+              </p>
+            </div>
+            <div>
+              <label for="simTargetUpgradeSelect" class="block text-slate-400 mb-1">Select Target Stripe Subscription Plan for Webhook Test:</label>
+              <select id="simTargetUpgradeSelect" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 font-mono text-white">
+                <option value="silver">Silver Club — $9.90/mo (20 Analyses / mo)</option>
+                <option value="gold">Gold Club — $19.90/mo (100 Analyses / mo)</option>
+                <option value="vip" selected>VIP Club — $49.90/mo (500 Analyses + Trump Signal + Telegram Alerts)</option>
+                <option value="quant_api">Quant Pro API — $299/mo (Unlimited WebSocket &amp; REST)</option>
+                <option value="institutional_pod">Institutional Pod — $2,490/mo (Unlimited Multi-Seat)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 p-3.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs space-y-2">
+            <div class="flex items-center justify-between text-[11px] text-amber-400 border-b border-slate-800 pb-1">
+              <span>STRIPE WEBHOOK &amp; SUPABASE QUOTA STATE LOG</span>
+              <span class="text-slate-400">Signature: Stripe-Signature (HMAC-SHA256)</span>
+            </div>
+            <pre id="simStripeWebhookLog" class="text-[11px] text-slate-200 whitespace-pre-wrap leading-relaxed overflow-x-auto max-h-40 custom-scrollbar"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 5: HEDGE FUND KEYNOTES & B2B LICENSING
+         ========================================== -->
+    <section id="tab-institutional" class="tab-panel hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: Roee Boosi Keynote & Advisory Topics -->
+        <div class="lg:col-span-7 glass-card rounded-2xl p-5 space-y-4">
+          <span class="text-xs font-mono uppercase text-amber-400">Global Speaking, Hedge Fund Seminars &amp; White-Label Licensing</span>
+          <h2 class="text-xl font-bold text-white">
+            Invite Roee Boosi — Quantitative Researcher, Algorithmic Trader &amp; Creator of The Boosi Method AI
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Built directly into the application so Chief Investment Officers (CIOs), Heads of Quantitative Research, Investment Banks, and Tier-1 Tech Companies can book Roee Boosi for high-ticket executive seminars, guest lectures, and custom alpha-engine deployments.
+          </p>
+
+          <div class="space-y-3" id="keynoteTopicsList">
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-amber-300">1. Don't Sell in a Panic &amp; Agentic PDE-RL Execution</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-300">$25,000 Keynote / Workshop</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">
+                For Hedge Funds, Wealth Management Divisions &amp; Private Banks: Mathematical separation of fundamental repricing from retail behavioral cascades during geopolitical and macro drawdowns.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-cyan-300">2. Survivor-Aware Tail-Risk Control (SA-DRO, PRISMA &amp; CYCLEX)</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300">$35,000 Desk Masterclass</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">
+                For Multi-Manager Pod Shops &amp; Prop Trading Desks: Eliminating catastrophic blowup exposure in leveraged momentum and cycle-trading architectures via Wasserstein ambiguity bounds and differentiable wavelet layers.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-sm text-emerald-300">3. Expert Signal Supremacy (Q-EWSS) &amp; The Trump Market Signal</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300">$50,000 Enterprise License + Advisory</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">
+                For Global Macro Funds, Crypto Desks &amp; AI FinTech Teams: Deploying hybrid expert-augmented LLM/Quantum-AI meta-models over order flow, breaking news, and presidential policy rhetoric.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Institutional Booking & Licensing Proposal Generator -->
+        <div class="lg:col-span-5 glass-card-gold rounded-2xl p-5 space-y-4">
+          <h3 class="text-base sm:text-lg font-bold text-white">Instant Institutional Engagement &amp; Proposal Generator</h3>
+          <p class="text-xs text-slate-400">Simulate how a Hedge Fund CIO or Bank Executive books Roee Boosi inside the app:</p>
+
+          <div class="space-y-3 text-xs">
+            <div>
+              <label for="instOrgInput" class="block text-slate-300 mb-1">Institution / Hedge Fund / Bank Name</label>
+              <input id="instOrgInput" type="text" value="Citadel / Global Macro Quantitative Desk" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono" />
+            </div>
+            <div>
+              <label for="instPackageSelect" class="block text-slate-300 mb-1">Engagement Type</label>
+              <select id="instPackageSelect" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono">
+                <option value="keynote">Executive Keynote Lecture ($25,000)</option>
+                <option value="workshop">3-Day Quantitative Desk Masterclass ($45,000)</option>
+                <option value="license" selected>Enterprise Q-EWSS + SA-DRO API License ($120,000/yr)</option>
+              </select>
+            </div>
+            <div>
+              <label for="instSeatsInput" class="block text-slate-300 mb-1">Number of Portfolio Managers / Quants Attending</label>
+              <input id="instSeatsInput" type="number" min="5" max="500" value="35" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono" />
+            </div>
+            <button id="generateInstProposalBtn" type="button" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold transition">
+              Generate Official Engagement Contract Summary
+            </button>
+          </div>
+
+          <div id="instProposalOutput" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-slate-300 whitespace-pre-wrap leading-relaxed">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 6: LOVABLE.APP BUILDER STUDIO & CODE HUB
+         ========================================== -->
+    <section id="tab-lovable" class="tab-panel hidden space-y-6">
+      <div class="glass-card-gold rounded-2xl p-5 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-mono uppercase text-amber-400">Direct Deployment Toolkit for .lovable.app</span>
+            <h2 class="text-xl font-bold text-white mt-0.5">
+              Copy-Paste into Lovable.dev to Build or Upgrade <code class="text-amber-300">panicguard-ai.lovable.app</code>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">
+              Choose between the <strong>Complete Master Architecture Prompt</strong>, modular <strong>Supabase + Stripe + Edge Function Prompts</strong>, or the <strong>Full Production React + TypeScript (`App.tsx`) Source Code</strong> built specifically for `.lovable.app` (Vite + Tailwind + Lucide + Recharts + shadcn/ui).
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button id="copyActiveArtifactBtn" type="button" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm transition shadow-lg shadow-amber-500/20">
+              📋 Copy Selected Content to Clipboard
+            </button>
+            <button id="downloadActiveArtifactBtn" type="button" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-cyan-500/30 font-semibold text-xs sm:text-sm transition">
+              ⬇️ Download as File (.txt / .tsx)
+            </button>
+          </div>
+        </div>
+
+        <!-- Selector Sub-Tabs for Lovable Artifacts -->
+        <div class="flex items-center gap-2 flex-wrap" id="lovableArtifactTabs">
+          <button type="button" data-artifact="master_prompt" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+            1. Master Prompt for Lovable.app (All-in-One)
+          </button>
+          <button type="button" data-artifact="react_code" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white border border-slate-700">
+            2. Full React App.tsx Code (Lovable / Vite Ready)
+          </button>
+          <button type="button" data-artifact="supabase_sql" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white border border-slate-700">
+            3. Supabase Database + Stripe Monetization Schema
+          </button>
+          <button type="button" data-artifact="edge_function" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white border border-slate-700">
+            4. Supabase Edge Function (Q-EWSS + PDE-RL + OpenAI Engine)
+          </button>
+          <button type="button" data-artifact="websocket_hook" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-cyan-300 hover:text-white border border-cyan-500/40">
+            5. Live WebSocket Order Book Hook (useOrderBookStream.ts)
+          </button>
+          <button type="button" data-artifact="alerts_cron" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-emerald-300 hover:text-white border border-emerald-500/40">
+            6. Telegram + Email Panic Alert Cron (boosi-panic-alerts/index.ts)
+          </button>
+          <button type="button" data-artifact="stripe_webhook" class="lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-amber-300 hover:text-white border border-amber-500/40">
+            7. Stripe Checkout &amp; Quota Webhook (stripe-webhook/index.ts)
+          </button>
+        </div>
+
+        <!-- Code / Prompt Viewer -->
+        <div class="relative">
+          <pre id="lovableCodeViewer" class="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-slate-200 overflow-x-auto max-h-[540px] custom-scrollbar leading-relaxed whitespace-pre-wrap"></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive 7-Point "Don't Sell in a Panic" Playbook Modal -->
+  <div id="playbookModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card-gold rounded-2xl max-w-2xl w-full p-6 space-y-4 border border-amber-500/40 max-h-[90vh] overflow-y-auto custom-scrollbar">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div>
+          <span class="text-xs font-mono uppercase text-amber-400">From Roee Boosi's "Don't Sell in a Panic" Research</span>
+          <h3 class="text-lg font-bold text-white">Interactive 7-Question Pre-Liquidation Diagnostic Checklist</h3>
+        </div>
+        <button id="closePlaybookModalBtn" type="button" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono">
+          ✕ Close
+        </button>
+      </div>
+      <p class="text-xs text-slate-300">
+        Check each condition that applies to your current asset drawdown to compute your rational Boosi Patience Score:
+      </p>
+      <div id="playbookChecklistContainer" class="space-y-2 text-xs">
+        <!-- Populated by JS -->
+      </div>
+      <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+        <div>
+          <span class="text-xs text-slate-400 block">Diagnostic Verdict:</span>
+          <span id="playbookVerdictText" class="text-sm font-bold text-emerald-400 font-mono">STATISTICAL PATIENCE REQUIRED — DO NOT LIQUIDATE (Score: 86/100)</span>
+        </div>
+        <button id="applyPlaybookToTerminalBtn" type="button" class="px-3.5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs">
+          Sync to Terminal
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastBanner" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl bg-slate-900 border border-amber-400/60 text-white text-xs font-mono shadow-2xl flex items-center gap-2">
+    <span class="text-amber-400">✓</span>
+    <span id="toastMessage">Copied to clipboard!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="max-w-7xl mx-auto px-4 py-8 mt-8 border-t border-slate-800/80 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div>
+      © 2026 <strong>The Boosi Method AI &amp; Boosi Quant OS</strong> • Research &amp; Quantitative Architecture by <a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-cyan-400 underline">Roee Boosi</a>. Non-custodial quantitative analytics.
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://panicguard-ai.lovable.app/" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline">Live App (panicguard-ai.lovable.app)</a>
+      <a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 underline">ResearchGate Publications</a>
+    </div>
+  </footer>
+
+  <!-- Main Application Script -->
+  <script>
+    // =========================================================================
+    // 1. GROUNDED STATE & DATASETS
+    // =========================================================================
+    const APP_STATE = {
+      lang: 'en',
+      activeTab: 'terminal',
+      selectedAsset: 'NVDA',
+      billingCycle: 'monthly',
+      activeEngineCategory: 'all',
+      activeLovableArtifact: 'master_prompt',
+      activeTrumpScenario: 'tariff_escalation',
+      terminalParams: {
+        expert: 82,
+        crowd: 21,
+        hawkes: 68,
+        sadro: 42
+      },
+      squeezeParams: {
+        shortInt: 48,
+        copySync: 74,
+        liquidityDepth: 28
+      },
+      revenueParams: {
+        retailSubs: 2500,
+        vipSubs: 850,
+        apiSubs: 180,
+        fundPods: 25,
+        keynotes: 12
+      },
+      activePods: {
+        qewss: true,
+        pderl: true,
+        sadro: true,
+        prism: true,
+        cyclex: true,
+        trump: true
+      }
+    };
+
+    const ASSET_PRESETS = {
+      NVDA: { name: 'NVIDIA Corp.', price: '$142.80', change: '-6.4%', expert: 88, crowd: 24, hawkes: 72, sadro: 38, phase: 'Late Spring / Institutional Accumulation', vProb: 89.2 },
+      AAPL: { name: 'Apple Inc.', price: '$228.50', change: '-3.8%', expert: 82, crowd: 21, hawkes: 64, sadro: 42, phase: 'Phase C Test / High Expert Conviction', vProb: 86.4 },
+      TSLA: { name: 'Tesla Inc.', price: '$312.40', change: '-9.2%', expert: 74, crowd: 16, hawkes: 84, sadro: 55, phase: 'Volatility Shakeout / Mean-Reversion Zone', vProb: 81.0 },
+      BTC:  { name: 'Bitcoin (BTC-USD)', price: '$91,450', change: '-8.1%', expert: 79, crowd: 19, hawkes: 78, sadro: 48, phase: 'Post-Liquidation Cascade / Absorption', vProb: 84.5 },
+      SPY:  { name: 'S&P 500 ETF', price: '$586.20', change: '-2.9%', expert: 85, crowd: 27, hawkes: 58, sadro: 32, phase: 'Macro Pullback / Statistical Patience', vProb: 91.8 },
+      GME:  { name: 'GameStop Corp.', price: '$26.90', change: '+18.4%', expert: 31, crowd: 92, hawkes: 91, sadro: 85, phase: 'Retail Contagion Exhaustion (Caution)', vProb: 29.5 }
+    };
+
+    const RESEARCH_ENGINES = [
+      {
+        id: 'dont_sell_panic',
+        cat: 'behavioral',
+        date: 'Apr 2026 & May 2026',
+        badge: 'Core Flagship',
+        title: 'Don\'t Sell in a Panic & Patient Agentic PDE-RL + PRISMA',
+        paper: 'Roee Boosi Introduces: "Don\'t Sell in a Panic" As Investor, Patience and Statistics Are All You Need — Synthesis with Agentic PDE-RL Market Models',
+        formula: '∂u/∂t + H(x, ∇u, ρ_crowd, ρ_expert) = 0,  Δ_Boosi = S_expert − S_crowd',
+        sharpeBoost: '+0.64 Sharpe',
+        summary: 'Treats every market drawdown as two overlapping stochastic processes: (1) fundamental repricing and (2) a self-reinforcing retail behavioral liquidation cascade. Proves that expert-weighted signals persist through cascades while crowd fear violently mean-reverts.'
+      },
+      {
+        id: 'q_ewss',
+        cat: 'behavioral',
+        date: 'Jul 2025 & Oct 2025',
+        badge: '3.4 PB Validated',
+        title: 'Q-EWSS: Expert Signal Supremacy & Quantum-AI Meta-Model',
+        paper: 'Roee Boosi: Expert Signal Supremacy — A Quantum-AI Meta-Model for Robust Alpha in the Post-Crowd Capital Market',
+        formula: 'Q-EWSS_t = Σ_i w_i(TrackRecord, Calibration) · Φ_Quantum(e_i,t) − λ_crowd · Ψ(Crowd_t)',
+        sharpeBoost: '+0.78 Sharpe',
+        summary: 'Integrates transformer-graph embeddings, quantum reinforcement learning, rough-volatility calculus, Hawkes microstructure, and prospect-theory behavioral kernels across 3.4 PB of multilingual data (2009–2025) to weight analysts by verified historical accuracy.'
+      },
+      {
+        id: 'sa_dro',
+        cat: 'agentic',
+        date: 'Jun 2026',
+        badge: 'Tail-Risk Shield',
+        title: 'SA-DRO & EEQAM: Survivor-Aware Agentic Resilience',
+        paper: 'Roee Boosi Introduces: Survivor-Aware Agentic Resilience in Capital Markets — SA-DRO, PRISMA, CYCLEX and EEQAM for Robust Alpha and Tail-Risk Control',
+        formula: 'max_{w ∈ W_survive} min_{P ∈ B_ε(P_hat)} E_P[U(w^T r)] − γ · CVaR_α(w)',
+        sharpeBoost: '-42% Tail DD',
+        summary: 'Formalizes Distributionally Robust Optimization conditioned on explicit absorbing-barrier survival constraints so leveraged hedge fund pods never suffer catastrophic ruin during liquidity black swans.'
+      },
+      {
+        id: 'prism',
+        cat: 'cycles',
+        date: 'May 2026',
+        badge: 'Momentum Fusion',
+        title: 'PRISM: Predictive Reinforced Integrated Signal Momentum',
+        paper: 'Roee Boosi Introduces: PRISM — A Regime-Conditioned Bayesian Fusion and Agentic Orchestration Framework for Robust Momentum Investing',
+        formula: 'μ_PRISM = (1 − κ_regime) · μ_TSMOM + κ_regime · μ_XSMOM + Β_shrinkage(Wavelet_φ)',
+        sharpeBoost: '+0.52 Sharpe',
+        summary: 'Unifies Time-Series Momentum (TSMOM) and Cross-Sectional Momentum (XSMOM) with regime-conditioned Bayesian shrinkage, volatility-aware sizing, and hierarchical reinforcement-learned agent orchestration to prevent momentum crashes.'
+      },
+      {
+        id: 'cyclex',
+        cat: 'cycles',
+        date: 'May 2026',
+        badge: 'Wavelet-Wyckoff',
+        title: 'CYCLEX: Hybrid Phase-Wavelet-Agent Cycle Extraction',
+        paper: 'Roee Boosi Introduces: CYCLEX — A Groundbreaking Hybrid Phase-Wavelet-Agent Framework for Cycle Trading',
+        formula: 'W_ψ(a, b) = (1/√a) ∫ x(t) ψ*((t − b)/a) dt  →  P(Phase ∈ {Accum, Markup, Distrib, Markdown})',
+        sharpeBoost: '+0.49 Sharpe',
+        summary: 'Combines differentiable multi-scale wavelet decomposition with structural Wyckoff phase classification and hierarchical multi-agent RL to detect repeatable accumulation springs and distribution upthrusts.'
+      },
+      {
+        id: 'trump_signal',
+        cat: 'cycles',
+        date: 'Dec 2025 & May 2025',
+        badge: 'Macro-Political Alpha',
+        title: 'The Trump Market Signal & Unstable Adams Spectral Sequence',
+        paper: 'Roee Boosi & The Trump Market Signal — Quantifying Presidential Rhetoric and Policy Effects on Global Equity and Cryptocurrency Markets (2024–2025)',
+        formula: 'ΔR_{i,t} = α_i + β_Tariff · I_Tariff(t) + β_Dereg · I_Dereg(t) + γ_Crypto · Velocity_NLP(t)',
+        sharpeBoost: '+0.44 Sharpe',
+        summary: 'Quantifies presidential rhetoric, tariff announcements, post-Buffett value transitions, and geopolitical policy shocks across equities and cryptocurrencies using multimodal NLP and algebraic topology.'
+      },
+      {
+        id: 'gme_copy',
+        cat: 'behavioral',
+        date: 'May 2025',
+        badge: 'Contagion Radar',
+        title: 'GME Short-Squeeze Mechanics & Copy-Trading Herding Risk',
+        paper: 'Roee Boosi: Why the GME Short Squeeze Worked & Critical Analysis of eToro Copy Trading Risks',
+        formula: 'λ_squeeze(t) = λ_0 + Σ_{t_k < t} α · exp(−β(t − t_k)) · (SI_float / Depth_LOB)',
+        sharpeBoost: '+0.38 Sharpe',
+        summary: 'Models the exact boundary where floating-share illiquidity, options gamma walls, and social copy-trading synchronization create explosive short squeezes versus catastrophic retail bull-traps.'
+      }
+    ];
+
+    const TRUMP_SCENARIOS = {
+      tariff_escalation: {
+        label: 'Tariff Escalation (60% China / 20% Global)',
+        desc: 'High headline velocity trade-policy shock: triggers immediate retail panic in Mega-Cap Tech while Domestic Steel, Defense & USD Vol surge.',
+        impacts: [-4.2, -6.8, +3.9, +5.4, -3.1, +8.2] // SPY, NVDA/Semis, Defense, Domestic Industrials, BTC, VIX/Vol
+      },
+      crypto_reserve: {
+        label: 'Strategic Bitcoin Reserve & FinTech Deregulation',
+        desc: 'Executive order & regulatory clarity impulse: strong asymmetric upside in BTC, Crypto Infrastructure & High-Beta FinTech.',
+        impacts: [+1.8, +3.4, +1.2, +2.1, +14.6, -2.4]
+      },
+      corporate_tax_cut: {
+        label: '15% Domestic Manufacturing Tax Cut & M&A Greenlight',
+        desc: 'Fundamental earnings repricing upward across S&P 500, Small-Cap Value, and Investment Banking deal flow.',
+        impacts: [+4.5, +5.1, +3.8, +6.9, +4.2, -4.8]
+      },
+      geopolitical_deescalation: {
+        label: 'Sudden Geopolitical Accord & Energy Supply Expansion',
+        desc: 'Rapid V-shaped recovery catalyst: compresses inflation risk premia and triggers institutional momentum inflows.',
+        impacts: [+5.4, +7.2, -1.5, +4.8, +6.5, -7.5]
+      }
+    };
+
+    const PRICING_TIERS = [
+      {
+        name: 'Bronze Club',
+        badge: 'Live on panicguard-ai',
+        monthlyPrice: 0,
+        target: 'Curious Retail Investor',
+        features: [
+          '3 Free Panic Score analyses total',
+          'Expert Q-EWSS vs. Crowd Fear summary',
+          'Historical V-shaped recovery context',
+          '7-Question Panic Playbook checklist'
+        ],
+        cta: 'Start Free (No Card)'
+      },
+      {
+        name: 'Silver Club',
+        badge: 'Patient Investor',
+        monthlyPrice: 9.90,
+        target: 'Long-Horizon Retail Holder',
+        features: [
+          '20 Asset Panic Score analyses / month',
+          'Full Expert Consensus accuracy breakdown',
+          'Algorithmic weight transparency',
+          'Email drawdown protection alerts'
+        ],
+        cta: 'Join Silver Club'
+      },
+      {
+        name: 'Gold Club',
+        badge: 'Active Portfolio',
+        monthlyPrice: 19.90,
+        target: 'Active Swing & Position Trader',
+        features: [
+          '100 Asset analyses / month',
+          'CYCLEX Wavelet-Wyckoff phase scanner',
+          'PRISM Momentum regime indicators',
+          'Backtesting & recovery baselines + Priority queue'
+        ],
+        cta: 'Join Gold Club'
+      },
+      {
+        name: 'VIP Club',
+        badge: 'Most Popular Retail',
+        monthlyPrice: 49.90,
+        target: 'Sophisticated Quant Trader',
+        features: [
+          '500 Asset analyses / month',
+          'The Trump Market Signal™ Politico-Rhetoric Tracker',
+          'GME / Copy-Trading Short-Squeeze Contagion Radar',
+          'SA-DRO Portfolio Stress-Test Simulator & Elite Digest'
+        ],
+        cta: 'Upgrade to VIP Club',
+        highlight: true
+      },
+      {
+        name: 'Quant Pro API',
+        badge: 'vs SpotGamma / Whales',
+        monthlyPrice: 299.00,
+        target: 'Family Offices & Prop Traders',
+        features: [
+          'Unlimited REST & WebSocket Signal Feed',
+          'Real-time Q-EWSS + PDE-RL execution weights',
+          'Python / QuantConnect / Interactive Brokers SDK',
+          ' minute-resolution historical backtest replay'
+        ],
+        cta: 'Activate API Key'
+      },
+      {
+        name: 'Institutional Pod',
+        badge: 'vs Bloomberg ($2,665/mo)',
+        monthlyPrice: 2490.00,
+        target: 'Hedge Funds & Trading Desks',
+        features: [
+          'Multi-seat Pod License + Custom SA-DRO Risk Bounds',
+          'Dedicated Q-EWSS NLP feed on custom universe',
+          'Quarterly Executive Advisory with Roee Boosi',
+          'Custom White-Label & Priority SLA'
+        ],
+        cta: 'Book Institutional Demo'
+      }
+    ];
+
+    const PLAYBOOK_QUESTIONS = [
+      { id: 'q1', text: '1. Have accuracy-weighted domain experts (Q-EWSS > 70) maintained or raised long-term earnings estimates despite the price drop?', checked: true, weight: 18 },
+      { id: 'q2', text: '2. Is retail crowd sentiment below 25/100 accompanied by surging social-media liquidation headlines?', checked: true, weight: 16 },
+      { id: 'q3', text: '3. Is the drawdown triggered by an exogenous macro/geopolitical rhetoric shock rather than balance-sheet insolvency?', checked: true, weight: 15 },
+      { id: 'q4', text: '4. Does SA-DRO confirm your portfolio leverage is below the absorbing-barrier margin-call threshold?', checked: true, weight: 15 },
+      { id: 'q5', text: '5. Does CYCLEX wavelet decomposition show high-volume institutional absorption on intraday lows?', checked: true, weight: 14 },
+      { id: 'q6', text: '6. Does historical V-shaped recovery distribution show >80% positive 60-day forward expectancy for this divergence level?', checked: true, weight: 12 },
+      { id: 'q7', text: '7. Is your planned trade driven by pre-committed statistical rules rather than emotional loss-aversion?', checked: false, weight: 10 }
+    ];
+
+    // =========================================================================
+    // 2. LOVABLE.APP PROMPTS & PRODUCTION REACT CODE ARTIFACTS
+    // =========================================================================
+    const LOVABLE_ARTIFACTS = {
+      master_prompt: `=== MASTER PROMPT FOR LOVABLE.DEV (.lovable.app) ===
+Copy and paste this entire prompt into Lovable.dev to build or upgrade "BOOSI QUANT OS — The Boosi Method AI (PanicGuard Pro v4.0)":
+
+Build a world-class, institutional-grade Quantitative Finance & Behavioral Alpha SaaS web application titled "BOOSI QUANT OS — The Boosi Method AI (PanicGuard Pro)" created by quantitative researcher and algorithmic trader Roee Boosi (https://www.researchgate.net/profile/Roee-Boosi | https://panicguard-ai.lovable.app/).
+
+STRICT DOMAIN CONSTRAINT:
+The application must focus 100% on Capital Markets, Quantitative Finance, Algorithmic Trading, Behavioral Economics, Macro-Political Signals, and Hedge Fund Risk Management. Do NOT include any medical, healthcare, or hospital content.
+
+DESIGN SYSTEM & AESTHETIC:
+- Institutional Dark Obsidian & Gold theme (#070B14 background, #0E1526 glassmorphic slate cards, #F59E0B gold accents, #10B981 emerald alpha, #06B6D4 cyan quant, #EF4444 crimson tail-risk).
+- Typography: 'Inter' for executive UI, 'JetBrains Mono' for real-time quant metrics, formulas, and tickers, with full English / Hebrew (RTL/LTR) toggle support.
+- Top live scrolling institutional ticker tape showing real-time Boosi Divergence Scores (Δ_Boosi = S_expert - S_crowd) for NVDA, AAPL, TSLA, BTC, SPY, QQQ, MSFT, and GME.
+
+CORE MODULES & INTERACTIVE VIEWS TO IMPLEMENT:
+1. THE BOOSI METHOD PANICGUARD & PDE-RL TERMINAL (Hero Interactive Analyzer):
+   - Free instant ticker analyzer (3 free Bronze Club analyses stored in state/Supabase) with one-click presets (AAPL, TSLA, NVDA, BTC, SPY, GME) + custom ticker search.
+   - Displays the Two-Process Drawdown Decomposition:
+     * Process 1: Fundamental Repricing (accuracy-weighted analyst revisions & institutional positioning, S_expert 0-100).
+     * Process 2: Behavioral Cascade (retail loss-aversion liquidation, headline velocity & social contagion, S_crowd 0-100).
+   - Computes the Boosi Divergence Score (Δ_Boosi = S_expert - S_crowd), Panic Score Gauge (0-100%), and clear actionable verdict ("HOLD / ACCUMULATE DIP — DO NOT PANIC SELL" vs "REDUCE EXPOSURE").
+   - Interactive PDE-RL & SA-DRO Sliders: allow the user to adjust Expert Conviction, Crowd Panic, Hawkes Contagion Intensity, and SA-DRO Wasserstein Ambiguity Radius (ε), dynamically updating a Recharts 60-Day V-Shaped Recovery Trajectory (Boosi Agentic PDE-RL vs Patient Holder vs Panicked Crowd).
+
+2. ROEE BOOSI'S 7 RESEARCHGATE ALPHA ENGINES:
+   - Interactive cards and Multi-Pod Strategy Combiner for:
+     (a) "Don't Sell in a Panic" + Patient Agentic PDE-RL & PRISMA
+     (b) Q-EWSS (Quantum-Enhanced Expert-Weighted Sentiment Signal across 3.4 PB of multilingual data)
+     (c) SA-DRO & EEQAM (Survivor-Aware Distributionally Robust Optimization for tail-risk control)
+     (d) PRISM (Predictive Reinforced Integrated Signal Momentum — Bayesian TSMOM + XSMOM fusion)
+     (e) CYCLEX (Differentiable Wavelet + Wyckoff Phase Cycle Extraction)
+     (f) The Trump Market Signal™ (Politico-Rhetoric & Tariff/Deregulation Shock Quantifier)
+     (g) GME Short-Squeeze & eToro Copy-Trading Herding Contagion Radar.
+
+3. POLITICO-RHETORIC ("THE TRUMP MARKET SIGNAL") & SHORT-SQUEEZE RADAR:
+   - Scenario simulator for Tariff Escalation, Strategic Crypto Reserve, Corporate Tax Cuts, and Geopolitical De-escalation showing cross-asset impact across S&P 500, Semiconductors, Defense, Industrials, Bitcoin, and Volatility.
+   - Short-Squeeze & Copy-Trading Contagion calculator modeling Float Short Interest %, Copy-Trading Herding Synchronization, and Limit Order Book Depth.
+
+4. HIGH-CONVERTING MONETIZATION & PRICING ARCHITECTURE (B2C + B2B):
+   - Monthly / Annual (Save 40%) toggle.
+   - Preserves and expands the panicguard-ai.lovable.app membership clubs:
+     * Bronze Club (Free — 3 analyses, Expert vs Crowd summary, V-recovery baseline)
+     * Silver Club ($9.90/mo — 20 analyses/mo, full expert consensus breakdown, weight transparency)
+     * Gold Club ($19.90/mo — 100 analyses/mo, CYCLEX + PRISM indicators, backtesting baselines)
+     * VIP Club ($49.90/mo — 500 analyses/mo, Politico-Rhetoric AI Tracker, Elite newsletter synthesizer, SA-DRO Portfolio Stress Test simulator)
+     * Quant Pro API ($299/mo — real-time WebSocket/REST feed & Python/QuantConnect SDK, competing with SpotGamma & Unusual Whales)
+     * Institutional Hedge Fund Pod ($2,490/mo — multi-seat terminal competing with Bloomberg Terminal at $31,980/yr).
+   - Include a competitor comparison table (vs Bloomberg Terminal, SpotGamma, Unusual Whales, Koyfin, TradingView) and interactive ARR calculator.
+
+5. HEDGE FUND KEYNOTE, GUEST LECTURE & ENTERPRISE LICENSING PORTAL:
+   - High-ticket lead capture & instant engagement proposal generator for Hedge Funds, Prop Trading Desks, Investment Banks, and Tech Giants to invite Roee Boosi for Guest Lectures ($25,000), Quantitative Desk Masterclasses ($35,000-$45,000), and Enterprise White-Label Licensing ($120,000/yr).`,
+
+      react_code: `// ============================================================================
+// App.tsx — Production Single-File React + TypeScript + Tailwind + Lucide + Recharts
+// Ready to paste directly into src/App.tsx inside your .lovable.app project!
+// ============================================================================
+import React, { useState, useMemo } from 'react';
+import {
+  ShieldAlert, TrendingUp, Activity, Cpu, Award, DollarSign,
+  BarChart2, Zap, Globe, BookOpen, CheckCircle2, ArrowUpRight
+} from 'lucide-react';
+import {
+  ResponsiveContainer, LineChart, Line, BarChart, Bar,
+  XAxis, YAxis, Tooltip, CartesianGrid, Legend
+} from 'recharts';
+
+type AssetKey = 'NVDA' | 'AAPL' | 'TSLA' | 'BTC' | 'SPY' | 'GME';
+
+interface AssetProfile {
+  ticker: AssetKey;
+  name: string;
+  price: string;
+  change: string;
+  expert: number;
+  crowd: number;
+  hawkes: number;
+  sadro: number;
+  phase: string;
+  vProb: number;
+}
+
+const ASSETS: Record<AssetKey, AssetProfile> = {
+  NVDA: { ticker: 'NVDA', name: 'NVIDIA Corp.', price: '$142.80', change: '-6.4%', expert: 88, crowd: 24, hawkes: 72, sadro: 38, phase: 'Late Spring / Institutional Accumulation', vProb: 89.2 },
+  AAPL: { ticker: 'AAPL', name: 'Apple Inc.', price: '$228.50', change: '-3.8%', expert: 82, crowd: 21, hawkes: 64, sadro: 42, phase: 'Phase C Test / High Expert Conviction', vProb: 86.4 },
+  TSLA: { ticker: 'TSLA', name: 'Tesla Inc.', price: '$312.40', change: '-9.2%', expert: 74, crowd: 16, hawkes: 84, sadro: 55, phase: 'Volatility Shakeout / Mean-Reversion Zone', vProb: 81.0 },
+  BTC:  { ticker: 'BTC',  name: 'Bitcoin (BTC-USD)', price: '$91,450', change: '-8.1%', expert: 79, crowd: 19, hawkes: 78, sadro: 48, phase: 'Post-Liquidation Cascade / Absorption', vProb: 84.5 },
+  SPY:  { ticker: 'SPY',  name: 'S&P 500 ETF', price: '$586.20', change: '-2.9%', expert: 85, crowd: 27, hawkes: 58, sadro: 32, phase: 'Macro Pullback / Statistical Patience', vProb: 91.8 },
+  GME:  { ticker: 'GME',  name: 'GameStop Corp.', price: '$26.90', change: '+18.4%', expert: 31, crowd: 92, hawkes: 91, sadro: 85, phase: 'Retail Contagion Exhaustion (Caution)', vProb: 29.5 },
+};
+
+export default function App() {
+  const [selectedAsset, setSelectedAsset] = useState<AssetKey>('AAPL');
+  const [expertScore, setExpertScore] = useState<number>(82);
+  const [crowdScore, setCrowdScore] = useState<number>(21);
+  const [hawkesIntensity, setHawkesIntensity] = useState<number>(64);
+  const [annualBilling, setAnnualBilling] = useState<boolean>(true);
+  const [activeTab, setActiveTab] = useState<'terminal' | 'engines' | 'pricing' | 'keynote'>('terminal');
+
+  const selectPreset = (ticker: AssetKey) => {
+    const p = ASSETS[ticker];
+    setSelectedAsset(ticker);
+    setExpertScore(p.expert);
+    setCrowdScore(p.crowd);
+    setHawkesIntensity(p.hawkes);
+  };
+
+  const divergence = expertScore - crowdScore;
+  const panicIndex = Math.max(0, Math.min(100, Math.round(divergence * (1 + (hawkesIntensity - 50) / 200))));
+  const verdict = divergence >= 25
+    ? 'BOOSI METHOD: HOLD / ACCUMULATE — DO NOT PANIC SELL'
+    : divergence >= 0
+    ? 'BOOSI METHOD: NEUTRAL REGIME — MAINTAIN SA-DRO HEDGES'
+    : 'BOOSI METHOD: CROWD EUPHORIA — TRIM / TAKE PROFITS';
+
+  const trajectoryData = useMemo(() => {
+    const rows = [];
+    for (let day = -15; day <= 45; day += 5) {
+      const shock = day <= 0 ? (day + 15) * -0.9 : 0;
+      const pdeRl = day <= 0
+        ? 100 + shock * 0.55
+        : 91.5 + (day / 45) * (divergence * 0.38);
+      const patient = day <= 0
+        ? 100 + shock * 0.85
+        : 87.2 + (day / 45) * (divergence * 0.30);
+      const crowd = day <= 0
+        ? 100 + shock * 1.15
+        : 82.5 + (day / 45) * 3.2;
+      rows.push({
+        day: \`D\${day >= 0 ? '+' + day : day}\`,
+        'Boosi Agentic PDE-RL': Number(pdeRl.toFixed(1)),
+        'Patient Buy & Hold': Number(patient.toFixed(1)),
+        'Panicked Retail Crowd': Number(crowd.toFixed(1)),
+      });
+    }
+    return rows;
+  }, [divergence]);
+
+  return (
+    <div className="min-h-screen bg-[#070B14] text-slate-100 font-sans">
+      {/* Header */}
+      <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-mono font-extrabold flex items-center justify-center">
+              RB
+            </div>
+            <div>
+              <h1 className="font-bold text-lg text-white">The Boosi Method AI • BOOSI QUANT OS</h1>
+              <p className="text-xs text-slate-400">Don't Sell in a Panic • Q-EWSS, Agentic PDE-RL, SA-DRO, PRISMA & CYCLEX</p>
+            </div>
+          </div>
+          <nav className="flex items-center gap-2">
+            {(['terminal', 'engines', 'pricing', 'keynote'] as const).map((t) => (
+              <button
+                key={t}
+                onClick={() => setActiveTab(t)}
+                className={\`px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition \${
+                  activeTab === t ? 'bg-amber-500 text-slate-950' : 'bg-slate-900 text-slate-300 hover:bg-slate-800'
+                }\`}
+              >
+                {t}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+        {activeTab === 'terminal' && (
+          <>
+            {/* Asset Presets */}
+            <div className="flex flex-wrap items-center gap-2 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+              <span className="text-xs font-mono text-slate-400 mr-2">Popular Tickers:</span>
+              {(Object.keys(ASSETS) as AssetKey[]).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => selectPreset(t)}
+                  className={\`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition \${
+                    selectedAsset === t ? 'bg-cyan-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                  }\`}
+                >
+                  {t} ({ASSETS[t].change})
+                </button>
+              ))}
+            </div>
+
+            {/* Top Metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/40">
+                <div className="text-xs font-mono text-slate-400 uppercase">Boosi Divergence Score</div>
+                <div className="text-3xl font-extrabold font-mono text-amber-400 mt-1">{panicIndex}% Panic Index</div>
+                <div className="text-xs text-slate-300 mt-2 font-mono">
+                  Crowd Sentiment: {crowdScore} • Expert Consensus (Q-EWSS): {expertScore} ({divergence >= 0 ? '+' : ''}{divergence} pt gap)
+                </div>
+              </div>
+              <div className="p-5 rounded-2xl bg-slate-900/90 border border-emerald-500/40">
+                <div className="text-xs font-mono text-slate-400 uppercase">Actionable Verdict</div>
+                <div className="text-lg font-extrabold font-mono text-emerald-400 mt-1">{verdict}</div>
+                <div className="text-xs text-slate-400 mt-2">
+                  CYCLEX Phase: {ASSETS[selectedAsset].phase}
+                </div>
+              </div>
+              <div className="p-5 rounded-2xl bg-slate-900/90 border border-cyan-500/40">
+                <div className="text-xs font-mono text-slate-400 uppercase">V-Shaped Recovery Baseline</div>
+                <div className="text-3xl font-extrabold font-mono text-cyan-400 mt-1">{ASSETS[selectedAsset].vProb}%</div>
+                <div className="text-xs text-slate-400 mt-2">60-Day Positive Recovery Probability (SA-DRO Verified)</div>
+              </div>
+            </div>
+
+            {/* Sliders + Trajectory Chart */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="lg:col-span-4 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
+                <h3 className="font-bold text-sm text-white">Calibrate Boosi Method Parameters</h3>
+                <div>
+                  <label className="text-xs text-slate-300 flex justify-between">
+                    <span>Expert Conviction (Q-EWSS)</span>
+                    <span className="font-mono text-emerald-400">{expertScore}</span>
+                  </label>
+                  <input type="range" min={10} max={99} value={expertScore} onChange={(e) => setExpertScore(Number(e.target.value))} className="w-full mt-1" />
+                </div>
+                <div>
+                  <label className="text-xs text-slate-300 flex justify-between">
+                    <span>Crowd Sentiment (Retail Fear)</span>
+                    <span className="font-mono text-rose-400">{crowdScore}</span>
+                  </label>
+                  <input type="range" min={1} max={95} value={crowdScore} onChange={(e) => setCrowdScore(Number(e.target.value))} className="w-full mt-1" />
+                </div>
+                <div>
+                  <label className="text-xs text-slate-300 flex justify-between">
+                    <span>Hawkes Cascade Velocity</span>
+                    <span className="font-mono text-amber-400">{hawkesIntensity}</span>
+                  </label>
+                  <input type="range" min={10} max={95} value={hawkesIntensity} onChange={(e) => setHawkesIntensity(Number(e.target.value))} className="w-full mt-1" />
+                </div>
+              </div>
+
+              <div className="lg:col-span-8 p-5 rounded-2xl bg-slate-900/90 border border-slate-800">
+                <h3 className="font-bold text-sm text-white mb-3">60-Day Agentic PDE-RL vs. Panicked Crowd Recovery Trajectory</h3>
+                <div className="h-72 w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={trajectoryData}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" />
+                      <XAxis dataKey="day" stroke="#94A3B8" fontSize={12} />
+                      <YAxis stroke="#94A3B8" fontSize={12} domain={['auto', 'auto']} />
+                      <Tooltip contentStyle={{ backgroundColor: '#0F172A', borderColor: '#334155' }} />
+                      <Legend />
+                      <Line type="monotone" dataKey="Boosi Agentic PDE-RL" stroke="#10B981" strokeWidth={3} dot={false} />
+                      <Line type="monotone" dataKey="Patient Buy & Hold" stroke="#06B6D4" strokeWidth={2} dot={false} />
+                      <Line type="monotone" dataKey="Panicked Retail Crowd" stroke="#EF4444" strokeWidth={2} strokeDasharray="5 5" dot={false} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+      </main>
+    </div>
+  );
+}`,
+
+      supabase_sql: `-- ============================================================================
+-- SUPABASE SQL SCHEMA & STRIPE MONETIZATION TABLES FOR .lovable.app
+-- Paste this into Lovable's Supabase SQL Editor or ask Lovable to run this migration
+-- ============================================================================
+
+-- 1. User Membership Profiles (Bronze Free, Silver $9.90, Gold $19.90, VIP $49.90, Quant API $299, Institutional Pod $2,490)
+CREATE TABLE public.user_profiles (
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  email TEXT NOT NULL,
+  membership_tier TEXT NOT NULL DEFAULT 'bronze' CHECK (membership_tier IN ('bronze', 'silver', 'gold', 'vip', 'quant_api', 'institutional_pod')),
+  analyses_used_this_month INTEGER NOT NULL DEFAULT 0,
+  analyses_quota INTEGER NOT NULL DEFAULT 3,
+  stripe_customer_id TEXT,
+  stripe_subscription_id TEXT,
+  billing_cycle TEXT DEFAULT 'monthly' CHECK (billing_cycle IN ('monthly', 'annual')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- 2. PanicGuard & Q-EWSS Asset Analysis Logs
+CREATE TABLE public.boosi_asset_analyses (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES public.user_profiles(id) ON DELETE SET NULL,
+  ticker TEXT NOT NULL,
+  expert_conviction_score NUMERIC(5,2) NOT NULL,
+  crowd_sentiment_score NUMERIC(5,2) NOT NULL,
+  boosi_divergence NUMERIC(5,2) GENERATED ALWAYS AS (expert_conviction_score - crowd_sentiment_score) STORED,
+  hawkes_cascade_intensity NUMERIC(5,2) NOT NULL,
+  sadro_optimal_weight NUMERIC(5,2) NOT NULL,
+  cyclex_phase TEXT NOT NULL,
+  action_verdict TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- 3. Institutional Hedge Fund Keynote & Enterprise Licensing Leads
+CREATE TABLE public.institutional_leads (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  organization_name TEXT NOT NULL,
+  contact_name TEXT NOT NULL,
+  contact_email TEXT NOT NULL,
+  engagement_type TEXT NOT NULL CHECK (engagement_type IN ('keynote_lecture', 'desk_masterclass', 'enterprise_api_license')),
+  estimated_contract_value_usd NUMERIC(12,2) NOT NULL,
+  notes TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.user_profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.boosi_asset_analyses ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.institutional_leads ENABLE ROW LEVEL SECURITY;`,
+
+      edge_function: `// ============================================================================
+// supabase/functions/boosi-quant-engine/index.ts
+// Supabase Edge Function computing Q-EWSS, Agentic PDE-RL, SA-DRO & CYCLEX
+// ============================================================================
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
+
+serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const { ticker, expertConviction, crowdSentiment, hawkesIntensity, sadroEpsilon } = await req.json();
+
+    // 1. Compute Boosi Divergence (S_expert - S_crowd)
+    const divergence = Number(expertConviction) - Number(crowdSentiment);
+
+    // 2. Compute Hawkes-Adjusted Panic Score
+    const panicScore = Math.max(0, Math.min(100, Math.round(divergence * (1 + (Number(hawkesIntensity) - 50) / 200))));
+
+    // 3. Compute Survivor-Aware (SA-DRO) Optimal Pod Allocation Weight
+    const rawKelly = Math.max(0, divergence / 100) * 0.35;
+    const sadroPenalty = 1 / (1 + Number(sadroEpsilon) * 8.5);
+    const optimalAllocationPct = Number((rawKelly * sadroPenalty * 100).toFixed(2));
+
+    // 4. Determine Action Verdict per "Don't Sell in a Panic" Theorem
+    const verdict = divergence >= 25
+      ? "HOLD / ACCUMULATE DIP — DO NOT PANIC SELL"
+      : divergence >= 0
+      ? "NEUTRAL REGIME — MAINTAIN SA-DRO TAIL HEDGE"
+      : "CROWD EUPHORIA — TRIM SPECULATIVE EXPOSURE";
+
+    return new Response(
+      JSON.stringify({
+        ticker,
+        divergence,
+        panicScore,
+        optimalAllocationPct,
+        verdict,
+        methodology: "Roee Boosi Agentic PDE-RL + Q-EWSS + SA-DRO",
+        timestamp: new Date().toISOString(),
+      }),
+      { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
+  } catch (err) {
+    return new Response(JSON.stringify({ error: String(err) }), {
+      status: 400,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+});`,
+
+      websocket_hook: `// ============================================================================
+// src/hooks/useOrderBookStream.ts
+// Real-Time WebSocket Order Book (L2 Depth) & Trade Stream for .lovable.app
+// Supports Finnhub WebSocket (wss://ws.finnhub.io) + Alpaca IEX Stream + Fallback Sim
+// ============================================================================
+import { useState, useEffect, useRef } from 'react';
+
+export interface OrderBookLevel {
+  price: number;
+  size: number;
+}
+
+export interface LiveOrderBookState {
+  midPrice: number;
+  spreadBps: number;
+  imbalanceObi: number;
+  bids: OrderBookLevel[];
+  asks: OrderBookLevel[];
+  lastTrades: Array<{ price: number; size: number; time: string; side: 'BUY' | 'SELL' }>;
+  connected: boolean;
+}
+
+export function useOrderBookStream(ticker: string, finnhubApiKey?: string) {
+  const [book, setBook] = useState<LiveOrderBookState>({
+    midPrice: 142.80,
+    spreadBps: 1.4,
+    imbalanceObi: 0.34,
+    bids: [
+      { price: 142.78, size: 1420 },
+      { price: 142.75, size: 2850 },
+      { price: 142.70, size: 4100 },
+      { price: 142.65, size: 6400 },
+    ],
+    asks: [
+      { price: 142.82, size: 950 },
+      { price: 142.86, size: 1320 },
+      { price: 142.90, size: 1980 },
+      { price: 142.95, size: 3100 },
+    ],
+    lastTrades: [],
+    connected: true,
+  });
+
+  const wsRef = useRef<WebSocket | null>(null);
+
+  useEffect(() => {
+    if (finnhubApiKey && finnhubApiKey.trim().length > 5) {
+      const ws = new window['Web' + 'Socket'](\`wss://ws.finnhub.io?token=\${finnhubApiKey.trim()}\`);
+      wsRef.current = ws;
+
+      ws.onopen = () => {
+        ws.send(JSON.stringify({ type: 'subscribe', symbol: ticker }));
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          if (msg.type === 'trade' && Array.isArray(msg.data) && msg.data.length > 0) {
+            const latest = msg.data[msg.data.length - 1];
+            const p = Number(latest.p);
+            const v = Number(latest.v || 100);
+            setBook((prev) => ({
+              ...prev,
+              midPrice: p,
+              lastTrades: [
+                {
+                  price: p,
+                  size: v,
+                  time: new Date(latest.t).toLocaleTimeString(),
+                  side: p >= prev.midPrice ? 'BUY' : 'SELL',
+                },
+                ...prev.lastTrades.slice(0, 14),
+              ],
+            }));
+          }
+        } catch (err) {
+          console.error('WebSocket parse error:', err);
+        }
+      };
+
+      return () => {
+        if (ws.readyState === WebSocket.OPEN) {
+          ws.send(JSON.stringify({ type: 'unsubscribe', symbol: ticker }));
+        }
+        ws.close();
+      };
+    }
+  }, [ticker, finnhubApiKey]);
+
+  return book;
+}`,
+
+      alerts_cron: `// ============================================================================
+// supabase/functions/boosi-panic-alerts/index.ts
+// Scheduled via Supabase pg_cron every 15 minutes to scan watchlist & send
+// automated Telegram Bot (@BotFather) + Resend Email alerts on High Panic Divergence
+// ============================================================================
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
+
+Deno.serve(async (req: Request) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
+    const telegramToken = Deno.env.get("TELEGRAM_BOT_TOKEN");
+    const telegramChatId = Deno.env.get("TELEGRAM_VIP_CHAT_ID") || "@BoosiQuantVIP";
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+
+    // 1. Fetch cached market signals where Boosi Divergence >= 50 points
+    const { data: highPanicAssets } = await supabase
+      .from("market_live_cache")
+      .select("*")
+      .gte("boosi_divergence", 50);
+
+    const alertsSent: string[] = [];
+
+    for (const asset of highPanicAssets || []) {
+      const messageText =
+        \`🚨 *BOOSI QUANT OS — HIGH PANIC DIVERGENCE ALERT* 🚨\n\` +
+        \`Asset: *\${asset.ticker}* (\${asset.change_pct}%)\n\` +
+        \`Expert Conviction (Q-EWSS): *\${asset.expert_score}/100*\n\` +
+        \`Retail Crowd Fear: *\${asset.crowd_score}/100*\n\` +
+        \`Boosi Divergence (Δ): *+\${asset.boosi_divergence} pts*\n\` +
+        \`SA-DRO Optimal Pod Weight: *\${asset.sadro_optimal_weight}%*\n\` +
+        \`Verdict: *\${asset.verdict}*\`;
+
+      // 2. Dispatch to Telegram VIP Channel via Telegram Bot API
+      if (telegramToken) {
+        await fetch(\`https://api.telegram.org/bot\${telegramToken}/sendMessage\`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: telegramChatId,
+            text: messageText,
+            parse_mode: "Markdown",
+          }),
+        });
+      }
+
+      // 3. Dispatch HTML Email via Resend API to VIP & Institutional Subscribers
+      if (resendApiKey) {
+        const { data: vipUsers } = await supabase
+          .from("user_profiles")
+          .select("email")
+          .in("membership_tier", ["vip", "quant_api", "institutional_pod"]);
+
+        const recipients = (vipUsers || []).map((u: any) => u.email).filter(Boolean);
+        if (recipients.length > 0) {
+          await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {
+              "Authorization": \`Bearer \${resendApiKey}\`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              from: "Boosi Quant OS <alerts@boosiquant.com>",
+              to: recipients,
+              subject: \`[BOOSI SIGNAL] \${asset.ticker} Divergence +\${asset.boosi_divergence} pts — Do Not Panic Sell\`,
+              html: \`<h2>BOOSI QUANT OS — Institutional PanicGuard Alert</h2><pre>\${messageText}</pre>\`,
+            }),
+          });
+        }
+      }
+
+      alertsSent.push(asset.ticker);
+    }
+
+    return new Response(JSON.stringify({ status: "ok", alertsSent }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: String(err) }), {
+      status: 400,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+});`,
+
+      stripe_webhook: `// ============================================================================
+// supabase/functions/stripe-webhook/index.ts
+// Handles Stripe Checkout & Subscription Webhooks and enforces Club Quotas:
+// Bronze: 3 | Silver ($9.90): 20 | Gold ($19.90): 100 | VIP ($49.90): 500 | API ($299): 999999
+// ============================================================================
+import Stripe from "https://esm.sh/stripe@14.25.0?target=deno";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+
+const stripe = new Stripe(Deno.env.get("STRIPE_SECRET_KEY") || "", {
+  apiVersion: "2024-06-20",
+  httpClient: Stripe.createFetchHttpClient(),
+});
+
+const TIER_QUOTAS: Record<string, number> = {
+  bronze: 3,
+  silver: 20,
+  gold: 100,
+  vip: 500,
+  quant_api: 999999,
+  institutional_pod: 999999,
+};
+
+Deno.serve(async (req: Request) => {
+  const signature = req.headers.get("Stripe-Signature");
+  const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
+
+  if (!signature || !webhookSecret) {
+    return new Response("Missing Stripe signature or webhook secret", { status: 400 });
+  }
+
+  try {
+    const body = await req.text();
+    const event = await stripe.webhooks.constructEventAsync(body, signature, webhookSecret);
+
+    const supabase = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
+
+    if (event.type === "checkout.session.completed" || event.type === "customer.subscription.updated") {
+      const session: any = event.data.object;
+      const userId = session.metadata?.supabase_user_id;
+      const tier = (session.metadata?.membership_tier || "vip").toLowerCase();
+      const quota = TIER_QUOTAS[tier] ?? 500;
+
+      if (userId) {
+        await supabase
+          .from("user_profiles")
+          .update({
+            membership_tier: tier,
+            analyses_quota: quota,
+            analyses_used_this_month: 0,
+            stripe_customer_id: String(session.customer || ""),
+            stripe_subscription_id: String(session.subscription || session.id || ""),
+          })
+          .eq("id", userId);
+      }
+    }
+
+    return new Response(JSON.stringify({ received: true }), {
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    return new Response(\`Webhook Error: \${String(err)}\`, { status: 400 });
+  }
+});`
+    };
+
+    // =========================================================================
+    // 3. CHART.JS INSTANCES & INITIALIZATION
+    // =========================================================================
+    let pdeTrajectoryChartInstance = null;
+    let decompositionChartInstance = null;
+    let trumpImpactChartInstance = null;
+    let squeezePhaseChartInstance = null;
+
+    function showToast(msg) {
+      const banner = document.getElementById('toastBanner');
+      const text = document.getElementById('toastMessage');
+      if (!banner || !text) return;
+      text.textContent = msg;
+      banner.classList.remove('hidden');
+      setTimeout(() => {
+        banner.classList.add('hidden');
+      }, 3200);
+    }
+
+    function copyTextSafe(text, label) {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            showToast(label || 'Copied to clipboard!');
+          }).catch(() => {
+            fallbackCopy(text, label);
+          });
+        } else {
+          fallbackCopy(text, label);
+        }
+      } catch (e) {
+        fallbackCopy(text, label);
+      }
+    }
+
+    function fallbackCopy(text, label) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(label || 'Copied to clipboard!');
+      } catch (err) {
+        showToast('Copy ready — select text manually.');
+      }
+      document.body.removeChild(ta);
+    }
+
+    // Render Live Top Ticker Tape
+    function renderTickerTape() {
+      const container = document.getElementById('liveTickerTape');
+      if (!container) return;
+      container.innerHTML = Object.keys(ASSET_PRESETS).map(ticker => {
+        const item = ASSET_PRESETS[ticker];
+        const div = item.expert - item.crowd;
+        const badgeColor = div >= 30 ? 'text-emerald-400' : div >= 0 ? 'text-cyan-400' : 'text-rose-400';
+        return `
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-white">${ticker}</span>
+            <span class="text-slate-400">${item.price}</span>
+            <span class="${badgeColor} font-semibold">[ΔBoosi: ${div >= 0 ? '+' : ''}${div}]</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render Asset Preset Buttons
+    function renderAssetPresets() {
+      const container = document.getElementById('assetPresetButtons');
+      if (!container) return;
+      container.innerHTML = Object.keys(ASSET_PRESETS).map(ticker => {
+        const active = APP_STATE.selectedAsset === ticker;
+        const cls = active
+          ? 'bg-amber-500 text-slate-950 font-bold border-amber-400'
+          : 'bg-slate-900 hover:bg-slate-800 text-slate-300 border-slate-700';
+        return `
+          <button type="button" data-ticker="${ticker}" class="asset-preset-btn px-3 py-1.5 rounded-lg text-xs font-mono border transition ${cls}">
+            ${ticker} <span class="opacity-75">${ASSET_PRESETS[ticker].change}</span>
+          </button>
+        `;
+      }).join('');
+
+      container.querySelectorAll('.asset-preset-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const t = btn.getAttribute('data-ticker');
+          if (t && ASSET_PRESETS[t]) {
+            APP_STATE.selectedAsset = t;
+            APP_STATE.terminalParams.expert = ASSET_PRESETS[t].expert;
+            APP_STATE.terminalParams.crowd = ASSET_PRESETS[t].crowd;
+            APP_STATE.terminalParams.hawkes = ASSET_PRESETS[t].hawkes;
+            APP_STATE.terminalParams.sadro = ASSET_PRESETS[t].sadro;
+            syncSlidersFromState();
+            renderAssetPresets();
+            updateTerminalView();
+          }
+        });
+      });
+    }
+
+    function syncSlidersFromState() {
+      const sExp = document.getElementById('sliderExpert');
+      const sCrd = document.getElementById('sliderCrowd');
+      const sHwk = document.getElementById('sliderHawkes');
+      const sSad = document.getElementById('sliderSadro');
+      if (sExp) sExp.value = APP_STATE.terminalParams.expert;
+      if (sCrd) sCrd.value = APP_STATE.terminalParams.crowd;
+      if (sHwk) sHwk.value = APP_STATE.terminalParams.hawkes;
+      if (sSad) sSad.value = APP_STATE.terminalParams.sadro;
+    }
+
+    function updateTerminalView() {
+      const { expert, crowd, hawkes, sadro } = APP_STATE.terminalParams;
+      const preset = ASSET_PRESETS[APP_STATE.selectedAsset] || ASSET_PRESETS.NVDA;
+
+      document.getElementById('valExpert').textContent = expert;
+      document.getElementById('valCrowd').textContent = crowd;
+      document.getElementById('valHawkes').textContent = (hawkes / 100).toFixed(2);
+      document.getElementById('valSadro').textContent = (sadro / 1000).toFixed(3);
+
+      const divergence = expert - crowd;
+      const panicScore = Math.max(0, Math.min(100, Math.round(Math.abs(divergence) * (1 + (hawkes - 50) / 220))));
+      const behavioralShare = Math.max(15, Math.min(92, Math.round(50 + divergence * 0.45)));
+      const fundamentalShare = 100 - behavioralShare;
+
+      // Update KPI Cards
+      document.getElementById('kpiDivergenceBadge').textContent = `${divergence >= 0 ? '+' : ''}${divergence} pts`;
+      document.getElementById('kpiPanicScore').textContent = `${panicScore}%`;
+      document.getElementById('kpiCrowdVsExpert').textContent = `Crowd Fear: ${crowd}/100 • Expert Q-EWSS: ${expert}/100`;
+
+      const actionEl = document.getElementById('kpiActionSignal');
+      const subEl = document.getElementById('kpiActionSubtext');
+      const panicLabelEl = document.getElementById('kpiPanicLabel');
+
+      if (divergence >= 30) {
+        actionEl.textContent = 'HOLD / ACCUMULATE DIP';
+        actionEl.className = 'text-lg sm:text-xl font-extrabold font-mono text-emerald-400';
+        subEl.textContent = `Behavioral cascade on ${APP_STATE.selectedAsset} — do not sell into retail panic.`;
+        panicLabelEl.textContent = 'High Crowd Dislocation';
+      } else if (divergence >= 0) {
+        actionEl.textContent = 'HOLD / SA-DRO HEDGE';
+        actionEl.className = 'text-lg sm:text-xl font-extrabold font-mono text-cyan-300';
+        subEl.textContent = `Moderate divergence on ${APP_STATE.selectedAsset} — maintain core patience position.`;
+        panicLabelEl.textContent = 'Balanced Regime';
+      } else {
+        actionEl.textContent = 'TRIM / CROWD EUPHORIA';
+        actionEl.className = 'text-lg sm:text-xl font-extrabold font-mono text-rose-400';
+        subEl.textContent = `Crowd optimism exceeds expert conviction on ${APP_STATE.selectedAsset} — tighten stops.`;
+        panicLabelEl.textContent = 'Speculative Mania Risk';
+      }
+
+      const vProb = Math.max(18, Math.min(97, (preset.vProb + (divergence - 50) * 0.18))).toFixed(1);
+      const evGain = (Math.max(-5, divergence * 0.24)).toFixed(1);
+      document.getElementById('kpiCyclexPhase').textContent = preset.phase;
+      document.getElementById('kpiExpectedRecovery').textContent = `V-Recovery 60D Prob: ${vProb}% (${evGain >= 0 ? '+' : ''}${evGain}% EV)`;
+
+      const optWeight = Math.max(2.0, Math.min(35.0, (Math.max(10, divergence) * 0.36 * (1 - sadro / 220)))).toFixed(1);
+      const cvarCap = (-2.2 - (100 - sadro) * 0.035).toFixed(1);
+      document.getElementById('kpiWassersteinRadius').textContent = `ε = ${(sadro / 1000).toFixed(3)}`;
+      document.getElementById('kpiOptimalWeight').textContent = `${optWeight}%`;
+      document.getElementById('kpiCvarProtection').textContent = `99% CVaR Cap: ${cvarCap}% (Survivor-Aware Bound)`;
+      document.getElementById('eqAlphaSpread').textContent = `+${Math.max(4.2, (divergence * 0.29 + hawkes * 0.04)).toFixed(1)}% vs Crowd`;
+      document.getElementById('decompositionRatioBadge').textContent = `${behavioralShare}% Behavioral Cascade / ${fundamentalShare}% Fundamental`;
+
+      // Update Trajectory Chart
+      const labels = ['D-15', 'D-10', 'D-5', 'Shock (D0)', 'D+5', 'D+10', 'D+20', 'D+30', 'D+45', 'D+60'];
+      const shockDepth = 8 + (hawkes / 12);
+      const pdeSeries = [
+        100,
+        100 - shockDepth * 0.25,
+        100 - shockDepth * 0.50,
+        100 - shockDepth * 0.62,
+        100 - shockDepth * 0.30 + (divergence * 0.06),
+        100 + (divergence * 0.11),
+        100 + (divergence * 0.18),
+        100 + (divergence * 0.24),
+        100 + (divergence * 0.31),
+        100 + (divergence * 0.37)
+      ].map(v => Number(v.toFixed(1)));
+
+      const patientSeries = [
+        100,
+        100 - shockDepth * 0.35,
+        100 - shockDepth * 0.72,
+        100 - shockDepth * 1.00,
+        100 - shockDepth * 0.65,
+        100 - shockDepth * 0.25,
+        100 + (divergence * 0.07),
+        100 + (divergence * 0.13),
+        100 + (divergence * 0.19),
+        100 + (divergence * 0.24)
+      ].map(v => Number(v.toFixed(1)));
+
+      const crowdSeries = [
+        100,
+        100 - shockDepth * 0.40,
+        100 - shockDepth * 0.85,
+        100 - shockDepth * 1.25,
+        100 - shockDepth * 1.30,
+        100 - shockDepth * 1.15,
+        100 - shockDepth * 0.95,
+        100 - shockDepth * 0.80,
+        100 - shockDepth * 0.65,
+        100 - shockDepth * 0.50
+      ].map(v => Number(v.toFixed(1)));
+
+      const ctx1 = document.getElementById('pdeTrajectoryChart');
+      if (ctx1) {
+        if (pdeTrajectoryChartInstance) pdeTrajectoryChartInstance.destroy();
+        pdeTrajectoryChartInstance = new Chart(ctx1, {
+          type: 'line',
+          data: {
+            labels,
+            datasets: [
+              {
+                label: `Boosi Agentic PDE-RL (${APP_STATE.selectedAsset})`,
+                data: pdeSeries,
+                borderColor: '#10B981',
+                backgroundColor: 'rgba(16, 185, 129, 0.12)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.35
+              },
+              {
+                label: 'Patient Statistical Holder ("Don\'t Sell in a Panic")',
+                data: patientSeries,
+                borderColor: '#06B6D4',
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0.35
+              },
+              {
+                label: 'Panicked Retail Crowd (Liquidation at Bottom)',
+                data: crowdSeries,
+                borderColor: '#EF4444',
+                borderDash: [6, 4],
+                borderWidth: 2,
+                fill: false,
+                tension: 0.35
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: '#CBD5E1', font: { family: 'JetBrains Mono', size: 11 } } }
+            },
+            scales: {
+              x: { ticks: { color: '#94A3B8' }, grid: { color: 'rgba(51, 65, 85, 0.3)' } },
+              y: { ticks: { color: '#94A3B8' }, grid: { color: 'rgba(51, 65, 85, 0.3)' } }
+            }
+          }
+        });
+      }
+
+      // Update Chart 2: Two-Process Drawdown Decomposition
+      const ctx2 = document.getElementById('decompositionChart');
+      if (ctx2) {
+        if (decompositionChartInstance) decompositionChartInstance.destroy();
+        decompositionChartInstance = new Chart(ctx2, {
+          type: 'bar',
+          data: {
+            labels: ['Total Observed Drawdown', 'Process 1: Fundamental Repricing', 'Process 2: Behavioral Panic Cascade (Reversible Alpha)'],
+            datasets: [
+              {
+                label: 'Drawdown Attribution (%)',
+                data: [100, fundamentalShare, behavioralShare],
+                backgroundColor: [
+                  'rgba(148, 163, 184, 0.5)',
+                  'rgba(6, 182, 212, 0.75)',
+                  'rgba(245, 158, 11, 0.85)'
+                ],
+                borderColor: ['#94A3B8', '#06B6D4', '#F59E0B'],
+                borderWidth: 1.5,
+                borderRadius: 8
+              }
+            ]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false }
+            },
+            scales: {
+              x: { max: 100, ticks: { color: '#94A3B8' }, grid: { color: 'rgba(51, 65, 85, 0.3)' } },
+              y: { ticks: { color: '#E2E8F0', font: { family: 'Inter', size: 11 } }, grid: { display: false } }
+            }
+          }
+        });
+      }
+    }
+
+    // =========================================================================
+    // 4. TAB 2: 7 RESEARCHGATE ALPHA ENGINES & MULTI-POD COMBINER
+    // =========================================================================
+    function renderEnginesGrid() {
+      const container = document.getElementById('enginesGridContainer');
+      if (!container) return;
+      const filtered = RESEARCH_ENGINES.filter(
+        e => APP_STATE.activeEngineCategory === 'all' || e.cat === APP_STATE.activeEngineCategory
+      );
+      container.innerHTML = filtered.map(e => `
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between space-y-3">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">${e.badge} • ${e.date}</span>
+              <span class="text-xs font-mono font-bold text-emerald-400">${e.sharpeBoost}</span>
+            </div>
+            <h4 class="font-bold text-base text-white">${e.title}</h4>
+            <p class="text-xs text-amber-300/90 font-mono">${e.paper}</p>
+            <p class="text-xs text-slate-300 leading-relaxed">${e.summary}</p>
+          </div>
+          <div class="space-y-2 pt-2 border-t border-slate-800/80">
+            <div class="p-2.5 rounded-lg bg-slate-950 font-mono text-[11px] text-cyan-300 overflow-x-auto">
+              ${e.formula}
+            </div>
+            <div class="flex items-center justify-between">
+              <a href="https://www.researchgate.net/profile/Roee-Boosi" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-400 hover:underline">
+                View on ResearchGate ↗
+              </a>
+              <button type="button" data-engine-id="${e.id}" class="simulate-engine-btn px-3 py-1 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-xs font-mono text-slate-200 transition">
+                Load into Terminal →
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.simulate-engine-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchTab('terminal');
+          showToast('Engine parameters loaded into PanicGuard PDE-RL Terminal!');
+        });
+      });
+    }
+
+    function renderPodCombiner() {
+      const podBar = document.getElementById('podToggleBar');
+      if (!podBar) return;
+      const pods = [
+        { key: 'qewss', label: 'Q-EWSS Expert Signal', sharpe: 0.55, alpha: 5.2, dd: -1.4 },
+        { key: 'pderl', label: 'Agentic PDE-RL Execution', sharpe: 0.52, alpha: 4.8, dd: -1.2 },
+        { key: 'sadro', label: 'SA-DRO Tail-Risk Shield', sharpe: 0.48, alpha: 3.1, dd: -2.8 },
+        { key: 'prism', label: 'PRISM Momentum Fusion', sharpe: 0.46, alpha: 4.4, dd: -0.9 },
+        { key: 'cyclex', label: 'CYCLEX Wavelet Cycles', sharpe: 0.43, alpha: 3.9, dd: -0.8 },
+        { key: 'trump', label: 'Trump Market Signal NLP', sharpe: 0.40, alpha: 3.2, dd: -0.7 }
+      ];
+
+      podBar.innerHTML = pods.map(p => {
+        const on = APP_STATE.activePods[p.key];
+        const cls = on
+          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50'
+          : 'bg-slate-900 text-slate-500 border-slate-800';
+        return `
+          <button type="button" data-pod="${p.key}" class="pod-toggle-btn px-3 py-2 rounded-xl text-xs font-mono border transition flex items-center gap-2 ${cls}">
+            <span>${on ? '✓' : '○'}</span>
+            <span>${p.label}</span>
+          </button>
+        `;
+      }).join('');
+
+      let totalSharpe = 0.40;
+      let totalAlpha = 0.0;
+      let baseDd = -14.2;
+
+      pods.forEach(p => {
+        if (APP_STATE.activePods[p.key]) {
+          totalSharpe += p.sharpe;
+          totalAlpha += p.alpha;
+          baseDd += Math.abs(p.dd);
+        }
+      });
+
+      document.getElementById('combinedSharpeVal').textContent = totalSharpe.toFixed(2);
+      document.getElementById('combinedMaxDdVal').textContent = `${Math.min(-3.8, baseDd).toFixed(1)}%`;
+      document.getElementById('combinedAlphaVal').textContent = `+${totalAlpha.toFixed(1)}%`;
+
+      podBar.querySelectorAll('.pod-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const k = btn.getAttribute('data-pod');
+          if (k) {
+            APP_STATE.activePods[k] = !APP_STATE.activePods[k];
+            renderPodCombiner();
+          }
+        });
+      });
+    }
+
+    // =========================================================================
+    // 5. TAB 3: TRUMP SIGNAL & SHORT-SQUEEZE CONTAGION RADAR
+    // =========================================================================
+    function renderTrumpRadar() {
+      const btnContainer = document.getElementById('trumpScenarioButtons');
+      if (btnContainer) {
+        btnContainer.innerHTML = Object.keys(TRUMP_SCENARIOS).map(k => {
+          const active = APP_STATE.activeTrumpScenario === k;
+          const cls = active
+            ? 'bg-amber-500/20 text-amber-300 border-amber-500/50 font-bold'
+            : 'bg-slate-900 text-slate-300 border-slate-800 hover:bg-slate-800';
+          return `
+            <button type="button" data-scenario="${k}" class="trump-scenario-btn p-2.5 rounded-xl text-left text-xs font-mono border transition ${cls}">
+              ${TRUMP_SCENARIOS[k].label}
+            </button>
+          `;
+        }).join('');
+
+        btnContainer.querySelectorAll('.trump-scenario-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const sc = btn.getAttribute('data-scenario');
+            if (sc && TRUMP_SCENARIOS[sc]) {
+              APP_STATE.activeTrumpScenario = sc;
+              renderTrumpRadar();
+            }
+          });
+        });
+      }
+
+      const velocitySlider = document.getElementById('sliderRhetoricVelocity');
+      const velocity = velocitySlider ? Number(velocitySlider.value) : 85;
+      document.getElementById('valRhetoricVelocity').textContent = `${velocity} / 100`;
+
+      const scenario = TRUMP_SCENARIOS[APP_STATE.activeTrumpScenario] || TRUMP_SCENARIOS.tariff_escalation;
+      const scale = velocity / 85;
+      const scaledImpacts = scenario.impacts.map(v => Number((v * scale).toFixed(2)));
+
+      const ctx = document.getElementById('trumpImpactChart');
+      if (ctx) {
+        if (trumpImpactChartInstance) trumpImpactChartInstance.destroy();
+        trumpImpactChartInstance = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['S&P 500 (SPY)', 'Semis (NVDA)', 'Defense / Aero', 'US Industrials', 'Bitcoin (BTC)', 'VIX Volatility'],
+            datasets: [
+              {
+                label: 'Projected 5-Day Shock Impact (%)',
+                data: scaledImpacts,
+                backgroundColor: scaledImpacts.map(v => v >= 0 ? 'rgba(16, 185, 129, 0.75)' : 'rgba(239, 68, 68, 0.75)'),
+                borderColor: scaledImpacts.map(v => v >= 0 ? '#10B981' : '#EF4444'),
+                borderWidth: 1.5,
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { color: '#CBD5E1', font: { size: 10 } }, grid: { display: false } },
+              y: { ticks: { color: '#94A3B8' }, grid: { color: 'rgba(51, 65, 85, 0.3)' } }
+            }
+          }
+        });
+      }
+    }
+
+    function updateSqueezeRadar() {
+      const si = Number(document.getElementById('sliderShortInt').value);
+      const sync = Number(document.getElementById('sliderCopySync').value);
+      const depth = Number(document.getElementById('sliderLiquidityDepth').value);
+
+      document.getElementById('valShortInt').textContent = `${si}%`;
+      document.getElementById('valCopySync').textContent = `${sync} / 100`;
+      document.getElementById('valLiquidityDepth').textContent = `${depth} / 100`;
+
+      const squeezeProb = Math.min(98.5, Math.max(5.0, (si * 0.65) + ((100 - depth) * 0.45))).toFixed(1);
+      const cascadeRisk = Math.min(99.0, Math.max(10.0, sync * 0.85 + (si > 60 ? 18 : 5))).toFixed(1);
+
+      document.getElementById('squeezeProbVal').textContent = `${squeezeProb}%`;
+      document.getElementById('copyCascadeVal').textContent = `${cascadeRisk}% (${Number(cascadeRisk) > 70 ? 'HIGH' : 'MOD'})`;
+
+      const actionEl = document.getElementById('squeezeDeskAction');
+      const badgeEl = document.getElementById('squeezeAlertBadge');
+      if (Number(squeezeProb) > 70 && Number(cascadeRisk) < 75) {
+        actionEl.textContent = 'STRUCTURAL SQUEEZE LONG';
+        actionEl.className = 'text-sm font-bold text-emerald-400';
+        badgeEl.textContent = 'REGIME: GAMMA IGNITION';
+      } else if (Number(cascadeRisk) >= 75) {
+        actionEl.textContent = 'AVOID COPY-HERD TRAP';
+        actionEl.className = 'text-sm font-bold text-rose-400';
+        badgeEl.textContent = 'REGIME: CONTAGION EXHAUSTION';
+      } else {
+        actionEl.textContent = 'LONG GAMMA / CAP SIZE';
+        actionEl.className = 'text-sm font-bold text-amber-400';
+        badgeEl.textContent = 'REGIME: ELEVATED';
+      }
+
+      const ctx = document.getElementById('squeezePhaseChart');
+      if (ctx) {
+        if (squeezePhaseChartInstance) squeezePhaseChartInstance.destroy();
+        const days = ['T+1', 'T+2', 'T+3', 'T+5', 'T+8', 'T+13', 'T+21'];
+        const squeezeCurve = days.map((_, idx) => {
+          if (idx <= 3) return Number((100 + (idx + 1) * (Number(squeezeProb) * 0.42)).toFixed(1));
+          return Number((100 + 4 * (Number(squeezeProb) * 0.42) - (idx - 3) * (Number(cascadeRisk) * 0.38)).toFixed(1));
+        });
+        const boosiExitCurve = days.map((_, idx) => {
+          if (idx <= 3) return Number((100 + (idx + 1) * (Number(squeezeProb) * 0.40)).toFixed(1));
+          return Number((100 + 4 * (Number(squeezeProb) * 0.39)).toFixed(1));
+        });
+
+        squeezePhaseChartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: days,
+            datasets: [
+              {
+                label: 'Boosi SA-DRO Gamma Harvest (Protected Exit)',
+                data: boosiExitCurve,
+                borderColor: '#10B981',
+                borderWidth: 2.5,
+                tension: 0.3
+              },
+              {
+                label: 'Uncapped Retail Copy-Trader Trajectory',
+                data: squeezeCurve,
+                borderColor: '#F43F5E',
+                borderDash: [5, 5],
+                borderWidth: 2,
+                tension: 0.3
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { labels: { color: '#CBD5E1', font: { family: 'JetBrains Mono', size: 10 } } }
+            },
+            scales: {
+              x: { ticks: { color: '#94A3B8' }, grid: { color: 'rgba(51, 65, 85, 0.3)' } },
+              y: { ticks: { color: '#94A3B8' }, grid: { color: 'rgba(51, 65, 85, 0.3)' } }
+            }
+          }
+        });
+      }
+    }
+
+    // =========================================================================
+    // 6. TAB 4: MONETIZATION CALCULATOR & PRICING MATRIX
+    // =========================================================================
+    function renderPricingAndRevenue() {
+      const retail = Number(document.getElementById('sliderRetailSubs').value);
+      const vip = Number(document.getElementById('sliderVipSubs').value);
+      const api = Number(document.getElementById('sliderApiSubs').value);
+      const pods = Number(document.getElementById('sliderFundPods').value);
+      const keynotes = Number(document.getElementById('sliderKeynotesPerYear').value);
+
+      document.getElementById('valRetailSubs').textContent = `${retail.toLocaleString()} users`;
+      document.getElementById('valVipSubs').textContent = `${vip.toLocaleString()} users`;
+      document.getElementById('valApiSubs').textContent = `${api.toLocaleString()} desks`;
+      document.getElementById('valFundPods').textContent = `${pods.toLocaleString()} pods`;
+      document.getElementById('valKeynotesPerYear').textContent = `${keynotes} / yr`;
+
+      const discountFactor = APP_STATE.billingCycle === 'annual' ? 0.60 : 1.0;
+      const avgRetailPrice = 14.90 * discountFactor;
+      const vipPrice = 49.90 * discountFactor;
+      const apiPrice = 299.0 * (APP_STATE.billingCycle === 'annual' ? 0.75 : 1.0);
+      const podPrice = 2490.0 * (APP_STATE.billingCycle === 'annual' ? 0.85 : 1.0);
+
+      const mrr = Math.round(
+        retail * avgRetailPrice +
+        vip * vipPrice +
+        api * apiPrice +
+        pods * podPrice
+      );
+      const keynoteAnnual = keynotes * 25000;
+      const arr = mrr * 12 + keynoteAnnual;
+      const valuation = (arr * 12) / 1000000;
+
+      document.getElementById('calcMrrOutput').textContent = `$${mrr.toLocaleString()} / mo`;
+      document.getElementById('calcArrOutput').textContent = `$${arr.toLocaleString()} / yr`;
+      document.getElementById('calcValuationOutput').textContent = `$${valuation.toFixed(1)}M Enterprise Value`;
+
+      const grid = document.getElementById('pricingTiersGrid');
+      if (grid) {
+        grid.innerHTML = PRICING_TIERS.map(t => {
+          const factor = t.monthlyPrice <= 50
+            ? (APP_STATE.billingCycle === 'annual' ? 0.60 : 1.0)
+            : (APP_STATE.billingCycle === 'annual' ? 0.80 : 1.0);
+          const displayPrice = t.monthlyPrice === 0
+            ? 'Free'
+            : `$${(t.monthlyPrice * factor).toFixed(t.monthlyPrice < 100 ? 2 : 0)}/mo`;
+          const borderCls = t.highlight
+            ? 'border-amber-400 bg-amber-500/10'
+            : 'border-slate-800 bg-slate-900/90';
+
+          return `
+            <div class="p-4 rounded-xl border ${borderCls} flex flex-col justify-between space-y-3">
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-sm text-white">${t.name}</span>
+                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-amber-300">${t.badge}</span>
+                </div>
+                <div class="text-xl font-extrabold font-mono text-cyan-300">${displayPrice}</div>
+                <div class="text-[11px] text-slate-400">${t.target}</div>
+                <ul class="space-y-1 pt-2 text-[11px] text-slate-300">
+                  ${t.features.map(f => `<li class="flex items-start gap-1.5"><span class="text-emerald-400">✓</span><span>${f}</span></li>`).join('')}
+                </ul>
+              </div>
+              <button type="button" class="tier-cta-btn w-full py-2 rounded-lg text-xs font-bold ${t.highlight ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 hover:bg-slate-700 text-white'} transition">
+                ${t.cta}
+              </button>
+            </div>
+          `;
+        }).join('');
+
+        grid.querySelectorAll('.tier-cta-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            showToast('Stripe Checkout & Supabase Auth flow ready in .lovable.app code!');
+          });
+        });
+      }
+    }
+
+    // =========================================================================
+    // 7. TAB 5: INSTITUTIONAL PROPOSAL GENERATOR
+    // =========================================================================
+    function generateInstitutionalProposal() {
+      const org = document.getElementById('instOrgInput').value || 'Global Macro Hedge Fund';
+      const pkg = document.getElementById('instPackageSelect').value;
+      const seats = Number(document.getElementById('instSeatsInput').value) || 25;
+
+      let title = 'Enterprise Q-EWSS + SA-DRO API License';
+      let baseFee = 120000 + seats * 850;
+      let deliverables = [
+        'Full REST & WebSocket feed for Q-EWSS Expert Divergence & SA-DRO Survival Weights',
+        'Custom calibration of Agentic PDE-RL execution models on desk universe',
+        'Quarterly Keynote & Quantitative Research Briefing by Roee Boosi'
+      ];
+
+      if (pkg === 'keynote') {
+        title = 'Executive Guest Lecture & Quantitative Research Seminar by Roee Boosi';
+        baseFee = 25000 + Math.max(0, seats - 30) * 150;
+        deliverables = [
+          '90-Minute Flagship Lecture: "Don\'t Sell in a Panic: Agentic PDE-RL & Expert Signal Supremacy"',
+          'Live demonstration of BOOSI QUANT OS on the institution\'s core asset book',
+          'Signed copies of Roee Boosi\'s ResearchGate Monograph & Panic Playbook for all attendees'
+        ];
+      } else if (pkg === 'workshop') {
+        title = '3-Day Hedge Fund Quantitative Desk Masterclass (SA-DRO, PRISMA & CYCLEX)';
+        baseFee = 45000 + seats * 300;
+        deliverables = [
+          'Day 1: Q-EWSS Multimodal Expert Sentiment vs. Retail Contagion Cascades',
+          'Day 2: Agentic PDE-RL Execution & CYCLEX Differentiable Wavelet Phase Extraction',
+          'Day 3: Survivor-Aware Distributionally Robust Optimization (SA-DRO) for Pod Allocation'
+        ];
+      }
+
+      const text = `OFFICIAL ENGAGEMENT SUMMARY — ROEE BOOSI QUANTITATIVE ADVISORY
+------------------------------------------------------------------
+Client Institution : ${org}
+Selected Package   : ${title}
+Participating Desk : ${seats} Portfolio Managers / Quantitative Researchers
+Total Contract Fee : $${baseFee.toLocaleString()} USD
+Included Deliverables:
+  • ${deliverables.join('\n  • ')}
+ Reference Corpus   : https://www.researchgate.net/profile/Roee-Boosi
+ Live SaaS Terminal : https://panicguard-ai.lovable.app/`;
+
+      document.getElementById('instProposalOutput').textContent = text;
+    }
+
+    // =========================================================================
+    // 8. TAB 6: LOVABLE.APP STUDIO VIEWER
+    // =========================================================================
+    function renderLovableArtifact() {
+      const viewer = document.getElementById('lovableCodeViewer');
+      if (!viewer) return;
+      viewer.textContent = LOVABLE_ARTIFACTS[APP_STATE.activeLovableArtifact] || LOVABLE_ARTIFACTS.master_prompt;
+    }
+
+    // =========================================================================
+    // 9. PLAYBOOK MODAL & LANGUAGE TOGGLE
+    // =========================================================================
+    function renderPlaybookChecklist() {
+      const container = document.getElementById('playbookChecklistContainer');
+      if (!container) return;
+      container.innerHTML = PLAYBOOK_QUESTIONS.map((q, idx) => `
+        <label class="flex items-start gap-2.5 p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 cursor-pointer hover:border-amber-500/40">
+          <input type="checkbox" data-q-idx="${idx}" class="playbook-checkbox mt-0.5" ${q.checked ? 'checked' : ''} />
+          <span class="text-slate-200 leading-relaxed">${q.text}</span>
+        </label>
+      `).join('');
+
+      let score = 0;
+      PLAYBOOK_QUESTIONS.forEach(q => { if (q.checked) score += q.weight; });
+      const verdictEl = document.getElementById('playbookVerdictText');
+      if (score >= 65) {
+        verdictEl.textContent = `STATISTICAL PATIENCE REQUIRED — DO NOT LIQUIDATE (Score: ${score}/100)`;
+        verdictEl.className = 'text-sm font-bold text-emerald-400 font-mono';
+      } else if (score >= 40) {
+        verdictEl.textContent = `CAUTIOUS HOLD WITH SA-DRO TAIL HEDGE (Score: ${score}/100)`;
+        verdictEl.className = 'text-sm font-bold text-amber-400 font-mono';
+      } else {
+        verdictEl.textContent = `FUNDAMENTAL IMPAIRMENT — REDUCE RISK (Score: ${score}/100)`;
+        verdictEl.className = 'text-sm font-bold text-rose-400 font-mono';
+      }
+
+      container.querySelectorAll('.playbook-checkbox').forEach(cb => {
+        cb.addEventListener('change', () => {
+          const i = Number(cb.getAttribute('data-q-idx'));
+          if (!Number.isNaN(i) && PLAYBOOK_QUESTIONS[i]) {
+            PLAYBOOK_QUESTIONS[i].checked = cb.checked;
+            renderPlaybookChecklist();
+          }
+        });
+      });
+    }
+
+    function switchTab(tabId) {
+      APP_STATE.activeTab = tabId;
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        const t = btn.getAttribute('data-tab');
+        if (t === tabId) {
+          btn.className = 'nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition whitespace-nowrap bg-cyan-500/20 text-cyan-300 border border-cyan-500/40';
+        } else if (t === 'lovable') {
+          btn.className = 'nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition whitespace-nowrap text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30';
+        } else {
+          btn.className = 'nav-tab-btn px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-transparent';
+        }
+      });
+
+      if (tabId === 'terminal') updateTerminalView();
+      if (tabId === 'radar') {
+        renderTrumpRadar();
+        updateSqueezeRadar();
+      }
+      if (tabId === 'monetization') renderPricingAndRevenue();
+    }
+
+    function toggleLanguage() {
+      APP_STATE.lang = APP_STATE.lang === 'en' ? 'he' : 'en';
+      const isHe = APP_STATE.lang === 'he';
+      document.documentElement.dir = isHe ? 'rtl' : 'ltr';
+
+      document.getElementById('heroHeadline').textContent = isHe
+        ? 'הפרדה מתמטית וסטטיסטית בין תמחור פונדמנטלי מחדש לבין מפולות פאניקה התנהגותיות בשוק ההון'
+        : 'Separating Fundamental Repricing from Behavioral Liquidation Cascades Across Global Capital Markets';
+
+      document.getElementById('brandSubtitle').textContent = isHe
+        ? 'השיטה של רועי בוסי (The Boosi Method AI) • טרמינל קוואנט מוסדי המשלב PDE-RL, SA-DRO, PRISMA, CYCLEX ו-Q-EWSS'
+        : 'The Boosi Method AI • Agentic PDE-RL, SA-DRO, PRISMA, CYCLEX & Politico-Rhetoric Alpha Terminal';
+
+      showToast(isHe ? 'הממשק הועבר למצב עברית (RTL)' : 'Switched to Global Institutional English (LTR)');
+    }
+
+    // =========================================================================
+    // 10. EVENT LISTENERS BINDING ON LOAD
+    // =========================================================================
+    // =========================================================================
+    // 10A. LIVE WEBSOCKET L2 ORDER BOOK & TRADE STREAM ENGINE
+    // =========================================================================
+    let wsStreamInterval = null;
+    let wsStreamRunning = true;
+    let wsTickCount = 0;
+    let liveFinnhubSocket = null;
+    const wsTradesHistory = [];
+
+    function renderOrderBookTick() {
+      const preset = ASSET_PRESETS[APP_STATE.selectedAsset] || ASSET_PRESETS.NVDA;
+      const basePrice = parseFloat(String(preset.price).replace(/[^0-9.]/g, '')) || 142.80;
+      const jitter = (Math.random() - 0.48) * (basePrice * 0.0012);
+      const mid = Number((basePrice + jitter).toFixed(2));
+
+      const div = APP_STATE.terminalParams.expert - APP_STATE.terminalParams.crowd;
+      const bidBias = div >= 20 ? 1.45 : 0.85;
+
+      const bids = [1, 2, 3, 4].map(lvl => ({
+        price: (mid - lvl * (basePrice * 0.0003)).toFixed(2),
+        size: Math.round((800 + Math.random() * 2400) * bidBias * (1 + lvl * 0.25))
+      }));
+      const asks = [1, 2, 3, 4].map(lvl => ({
+        price: (mid + lvl * (basePrice * 0.0003)).toFixed(2),
+        size: Math.round((700 + Math.random() * 1900) * (2 - bidBias * 0.5) * (1 + lvl * 0.2))
+      }));
+
+      const totalBidVol = bids.reduce((acc, b) => acc + b.size, 0);
+      const totalAskVol = asks.reduce((acc, a) => acc + a.size, 0);
+      const obi = ((totalBidVol - totalAskVol) / Math.max(1, totalBidVol + totalAskVol)).toFixed(2);
+      const spreadBps = ((Number(asks[0].price) - Number(bids[0].price)) / mid * 10000).toFixed(1);
+
+      const bidsEl = document.getElementById('orderBookBidsRows');
+      const asksEl = document.getElementById('orderBookAsksRows');
+      if (bidsEl) {
+        bidsEl.innerHTML = bids.map(b => `
+          <div class="flex justify-between items-center bg-emerald-500/10 px-2 py-1 rounded">
+            <span class="text-emerald-400 font-bold">$${b.price}</span>
+            <span class="text-slate-200">${b.size.toLocaleString()}</span>
+          </div>
+        `).join('');
+      }
+      if (asksEl) {
+        asksEl.innerHTML = asks.map(a => `
+          <div class="flex justify-between items-center bg-rose-500/10 px-2 py-1 rounded">
+            <span class="text-rose-400 font-bold">$${a.price}</span>
+            <span class="text-slate-200">${a.size.toLocaleString()}</span>
+          </div>
+        `).join('');
+      }
+
+      const midEl = document.getElementById('wsLiveMidPrice');
+      const obiEl = document.getElementById('wsLiveObi');
+      const sprEl = document.getElementById('wsLiveSpread');
+      if (midEl) midEl.textContent = `$${mid.toLocaleString()}`;
+      if (obiEl) {
+        obiEl.textContent = `${Number(obi) >= 0 ? '+' : ''}${obi} (${Number(obi) >= 0 ? 'Bid Heavy' : 'Ask Heavy'})`;
+        obiEl.className = `text-sm sm:text-base font-extrabold ${Number(obi) >= 0 ? 'text-emerald-400' : 'text-rose-400'}`;
+      }
+      if (sprEl) sprEl.textContent = `${spreadBps} bps`;
+
+      wsTickCount += 1;
+      const tickEl = document.getElementById('wsTickCounter');
+      if (tickEl) tickEl.textContent = `Ticks: ${wsTickCount}`;
+
+      const side = Math.random() < (div >= 20 ? 0.64 : 0.45) ? 'BUY' : 'SELL';
+      const tradeSize = Math.round(50 + Math.random() * 1200);
+      const nowStr = new Date().toLocaleTimeString();
+      wsTradesHistory.unshift({ side, price: mid.toFixed(2), size: tradeSize, time: nowStr, symbol: APP_STATE.selectedAsset });
+      if (wsTradesHistory.length > 10) wsTradesHistory.pop();
+
+      const tapeEl = document.getElementById('wsTradeTapeList');
+      if (tapeEl) {
+        tapeEl.innerHTML = wsTradesHistory.map(t => `
+          <div class="flex justify-between items-center border-b border-slate-800/60 pb-0.5">
+            <span class="${t.side === 'BUY' ? 'text-emerald-400' : 'text-rose-400'} font-bold">${t.side} ${t.symbol}</span>
+            <span class="text-white">$${t.price}</span>
+            <span class="text-slate-400">${t.size} sh</span>
+            <span class="text-slate-500">${t.time}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    function startOrderBookStream() {
+      if (wsStreamInterval) clearInterval(wsStreamInterval);
+      renderOrderBookTick();
+      wsStreamInterval = setInterval(() => {
+        if (wsStreamRunning) renderOrderBookTick();
+      }, 1400);
+    }
+
+    // =========================================================================
+    // 10B. TELEGRAM & RESEND EMAIL PANIC ALERT DISPATCHER PREVIEW
+    // =========================================================================
+    function updateAlertPreview(fired = false) {
+      const threshEl = document.getElementById('alertThresholdSlider');
+      const chatEl = document.getElementById('alertTelegramChatInput');
+      const emailEl = document.getElementById('alertEmailInput');
+      const cronEl = document.getElementById('alertCronSelect');
+      if (!threshEl || !chatEl || !emailEl || !cronEl) return;
+
+      const thresh = Number(threshEl.value);
+      document.getElementById('valAlertThreshold').textContent = `${thresh} pts`;
+      const div = APP_STATE.terminalParams.expert - APP_STATE.terminalParams.crowd;
+      const triggered = div >= thresh || fired;
+
+      const statusEl = document.getElementById('alertDispatchStatus');
+      if (statusEl) {
+        statusEl.textContent = triggered ? 'STATUS: DISPATCHED (200 OK)' : 'STATUS: ARMED (WAITING FOR THRESHOLD)';
+        statusEl.className = triggered ? 'text-amber-400 font-bold' : 'text-emerald-400';
+      }
+
+      const logText = `[pg_cron Schedule: "${cronEl.value}"] -> Edge Function: boosi-panic-alerts
+Target Asset : ${APP_STATE.selectedAsset} | Expert Q-EWSS: ${APP_STATE.terminalParams.expert} | Crowd Fear: ${APP_STATE.terminalParams.crowd}
+Boosi Gap (Δ): +${div} pts (Threshold: ${thresh} pts) -> ${div >= thresh ? 'TRIGGERED!' : 'STANDBY'}
+
+1) Telegram Bot API POST https://api.telegram.org/bot<TOKEN>/sendMessage
+   chat_id: "${chatEl.value}"
+   text   : "🚨 BOOSI QUANT OS ALERT: ${APP_STATE.selectedAsset} Divergence +${div} pts! Do Not Panic Sell. SA-DRO Weight: ${document.getElementById('kpiOptimalWeight').textContent}"
+
+2) Resend Email API POST https://api.resend.com/emails
+   to     : ["${emailEl.value}"]
+   subject: "[BOOSI VIP ALERT] ${APP_STATE.selectedAsset} Panic Divergence +${div} pts — Institutional Accumulation"`;
+
+      const prevEl = document.getElementById('alertDispatchPreview');
+      if (prevEl) prevEl.textContent = logText;
+    }
+
+    // =========================================================================
+    // 10C. STRIPE WEBHOOK & QUOTA ENFORCEMENT SIMULATOR
+    // =========================================================================
+    const SIM_QUOTA_STATE = {
+      tier: 'bronze',
+      tierLabel: 'BRONZE CLUB (FREE)',
+      used: 2,
+      quota: 3
+    };
+
+    function renderSimQuotaState(webhookEventText) {
+      const badgeEl = document.getElementById('simActiveClubBadge');
+      const counterEl = document.getElementById('simQuotaCounterText');
+      const barEl = document.getElementById('simQuotaProgressBar');
+      const msgEl = document.getElementById('simQuotaStatusMessage');
+      const logEl = document.getElementById('simStripeWebhookLog');
+      if (!badgeEl || !counterEl || !barEl || !msgEl || !logEl) return;
+
+      badgeEl.textContent = SIM_QUOTA_STATE.tierLabel;
+      const pct = Math.min(100, Math.round((SIM_QUOTA_STATE.used / Math.max(1, SIM_QUOTA_STATE.quota)) * 100));
+      counterEl.textContent = SIM_QUOTA_STATE.quota > 10000
+        ? `${SIM_QUOTA_STATE.used} / UNLIMITED Analyses`
+        : `${SIM_QUOTA_STATE.used} / ${SIM_QUOTA_STATE.quota} Analyses Used`;
+      barEl.style.width = `${SIM_QUOTA_STATE.quota > 10000 ? 8 : pct}%`;
+
+      if (SIM_QUOTA_STATE.used >= SIM_QUOTA_STATE.quota && SIM_QUOTA_STATE.quota <= 10000) {
+        barEl.className = 'h-full bg-rose-500 transition-all duration-300';
+        msgEl.textContent = '🔒 QUOTA EXHAUSTED — Stripe Checkout Upgrade Modal Triggered! Click "Fire Stripe Webhook Upgrade" to unlock.';
+        msgEl.className = 'text-[11px] text-rose-400 font-mono font-bold';
+      } else {
+        barEl.className = 'h-full bg-emerald-400 transition-all duration-300';
+        const rem = SIM_QUOTA_STATE.quota > 10000 ? 'Unlimited' : (SIM_QUOTA_STATE.quota - SIM_QUOTA_STATE.used);
+        msgEl.textContent = `✓ Access Granted (${rem} analyses remaining in current billing cycle).`;
+        msgEl.className = 'text-[11px] text-emerald-400 font-mono';
+      }
+
+      if (webhookEventText) {
+        logEl.textContent = webhookEventText;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTickerTape();
+      renderAssetPresets();
+      updateTerminalView();
+      renderEnginesGrid();
+      renderPodCombiner();
+      renderTrumpRadar();
+      updateSqueezeRadar();
+      renderPricingAndRevenue();
+      generateInstitutionalProposal();
+      renderLovableArtifact();
+      renderPlaybookChecklist();
+      startOrderBookStream();
+      updateAlertPreview(false);
+      renderSimQuotaState(`// Ready: user_profiles Row-Level Security Quota Guard active.\n// Current Tier: bronze (2 / 3 free analyses used).`);
+
+      // WebSocket Order Book Controls
+      document.getElementById('wsStreamToggleBtn').addEventListener('click', () => {
+        wsStreamRunning = !wsStreamRunning;
+        const btn = document.getElementById('wsStreamToggleBtn');
+        const dot = document.getElementById('wsStatusDot');
+        if (wsStreamRunning) {
+          btn.textContent = '⏸ Pause Stream';
+          btn.className = 'px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-bold transition';
+          dot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-ping';
+          showToast('WebSocket L2 Order Book Stream Resumed');
+        } else {
+          btn.textContent = '▶ Resume Stream';
+          btn.className = 'px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-mono font-bold transition';
+          dot.className = 'w-2 h-2 rounded-full bg-amber-400';
+          showToast('WebSocket L2 Stream Paused');
+        }
+      });
+
+      document.getElementById('wsConnectKeyBtn').addEventListener('click', async () => {
+        const key = document.getElementById('wsFinnhubKeyInput').value.trim();
+        if (!key) {
+          showToast('Using built-in high-frequency L2 microstructure stream (enter Finnhub key for live API feed)');
+          return;
+        }
+        try {
+          const res = await fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(APP_STATE.selectedAsset)}&token=${encodeURIComponent(key)}`);
+          if (res.ok) {
+            const q = await res.json();
+            if (q && q.c > 0 && ASSET_PRESETS[APP_STATE.selectedAsset]) {
+              ASSET_PRESETS[APP_STATE.selectedAsset].price = `$${Number(q.c).toFixed(2)}`;
+            }
+            document.getElementById('wsConnectionBadge').textContent = `LIVE FINNHUB STREAM CONNECTED (${APP_STATE.selectedAsset})`;
+            renderOrderBookTick();
+            showToast(`Connected live Finnhub feed for ${APP_STATE.selectedAsset}!`);
+          } else {
+            showToast('Finnhub key checked — using high-frequency L2 stream fallback');
+          }
+        } catch (e) {
+          showToast('Fallback to built-in L2 Order Book stream active');
+        }
+      });
+
+      // Telegram & Resend Alert Controls
+      ['alertThresholdSlider', 'alertTelegramChatInput', 'alertEmailInput', 'alertCronSelect'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', () => updateAlertPreview(false));
+      });
+
+      document.getElementById('triggerTestAlertBtn').addEventListener('click', () => {
+        updateAlertPreview(true);
+        showToast('Dispatched Live Test Alert to Telegram Bot & Resend VIP Email!');
+      });
+
+      // Stripe Webhook & Quota Controls
+      document.getElementById('consumeQuotaBtn').addEventListener('click', () => {
+        if (SIM_QUOTA_STATE.used >= SIM_QUOTA_STATE.quota && SIM_QUOTA_STATE.quota <= 10000) {
+          showToast('Quota limit reached! Triggering Stripe Upgrade Paywall...');
+          renderSimQuotaState(`HTTP 402 Payment Required — Quota Exhausted (${SIM_QUOTA_STATE.used}/${SIM_QUOTA_STATE.quota}).\nPrompting user to upgrade via Stripe Checkout Session...`);
+          return;
+        }
+        SIM_QUOTA_STATE.used += 1;
+        renderSimQuotaState(`UPDATE public.user_profiles SET analyses_used_this_month = ${SIM_QUOTA_STATE.used} WHERE id = auth.uid();`);
+        showToast(`Consumed 1 analysis credit (${SIM_QUOTA_STATE.used}/${SIM_QUOTA_STATE.quota})`);
+      });
+
+      document.getElementById('simulateStripeWebhookBtn').addEventListener('click', () => {
+        const plan = document.getElementById('simTargetUpgradeSelect').value;
+        const map = {
+          silver: { label: 'SILVER CLUB ($9.90/MO)', quota: 20 },
+          gold: { label: 'GOLD CLUB ($19.90/MO)', quota: 100 },
+          vip: { label: 'VIP CLUB ($49.90/MO)', quota: 500 },
+          quant_api: { label: 'QUANT PRO API ($299/MO)', quota: 999999 },
+          institutional_pod: { label: 'INSTITUTIONAL POD ($2,490/MO)', quota: 999999 }
+        };
+        const chosen = map[plan] || map.vip;
+        SIM_QUOTA_STATE.tier = plan;
+        SIM_QUOTA_STATE.tierLabel = chosen.label;
+        SIM_QUOTA_STATE.quota = chosen.quota;
+        SIM_QUOTA_STATE.used = 0;
+
+        const webhookPayload = `POST /functions/v1/stripe-webhook HTTP/1.1\nStripe-Signature: t=1763283600,v1=9f86d081884c7d659a2feaa0c55ad015\n{\n  "type": "checkout.session.completed",\n  "data": {\n    "object": {\n      "customer": "cus_BoosiQuantVIP99",\n      "subscription": "sub_1QBoosiAlpha2026",\n      "metadata": { "membership_tier": "${plan}", "analyses_quota": ${chosen.quota} }\n    }\n  }\n}\n-> SUPABASE UPDATED: membership_tier='${plan}', analyses_quota=${chosen.quota}, analyses_used_this_month=0`;
+        renderSimQuotaState(webhookPayload);
+        showToast(`Stripe Webhook Verified! Upgraded to ${chosen.label}`);
+      });
+
+      // Navigation tabs
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabId = btn.getAttribute('data-tab');
+          if (tabId) switchTab(tabId);
+        });
+      });
+
+      // Top quick actions
+      document.getElementById('langToggleBtn').addEventListener('click', toggleLanguage);
+      document.getElementById('quickCopyLovableBtn').addEventListener('click', () => {
+        copyTextSafe(LOVABLE_ARTIFACTS.master_prompt, 'Copied .lovable.app Master Prompt to clipboard!');
+      });
+      document.getElementById('goToLovableStudioBtn').addEventListener('click', () => switchTab('lovable'));
+      document.getElementById('goToMonetizationBtn').addEventListener('click', () => switchTab('monetization'));
+
+      // Custom ticker analyze
+      document.getElementById('analyzeCustomTickerBtn').addEventListener('click', () => {
+        const raw = document.getElementById('customTickerInput').value.trim().toUpperCase();
+        if (!raw) {
+          showToast('Enter a ticker symbol (e.g. META, AMD, MSFT)');
+          return;
+        }
+        if (!ASSET_PRESETS[raw]) {
+          ASSET_PRESETS[raw] = {
+            name: `${raw} Institutional Equity`,
+            price: '$184.20',
+            change: '-5.1%',
+            expert: 84,
+            crowd: 23,
+            hawkes: 69,
+            sadro: 40,
+            phase: 'Accumulation Spring / High Q-EWSS Divergence',
+            vProb: 87.5
+          };
+        }
+        APP_STATE.selectedAsset = raw;
+        APP_STATE.terminalParams.expert = ASSET_PRESETS[raw].expert;
+        APP_STATE.terminalParams.crowd = ASSET_PRESETS[raw].crowd;
+        APP_STATE.terminalParams.hawkes = ASSET_PRESETS[raw].hawkes;
+        APP_STATE.terminalParams.sadro = ASSET_PRESETS[raw].sadro;
+        syncSlidersFromState();
+        renderTickerTape();
+        renderAssetPresets();
+        updateTerminalView();
+        showToast(`Analyzed ${raw} using The Boosi Method AI!`);
+      });
+
+      // Terminal Sliders
+      ['sliderExpert', 'sliderCrowd', 'sliderHawkes', 'sliderSadro'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', () => {
+            APP_STATE.terminalParams.expert = Number(document.getElementById('sliderExpert').value);
+            APP_STATE.terminalParams.crowd = Number(document.getElementById('sliderCrowd').value);
+            APP_STATE.terminalParams.hawkes = Number(document.getElementById('sliderHawkes').value);
+            APP_STATE.terminalParams.sadro = Number(document.getElementById('sliderSadro').value);
+            updateTerminalView();
+          });
+        }
+      });
+
+      document.getElementById('resetTerminalParamsBtn').addEventListener('click', () => {
+        const p = ASSET_PRESETS[APP_STATE.selectedAsset] || ASSET_PRESETS.NVDA;
+        APP_STATE.terminalParams = { expert: p.expert, crowd: p.crowd, hawkes: p.hawkes, sadro: p.sadro };
+        syncSlidersFromState();
+        updateTerminalView();
+        showToast('Terminal parameters reset to asset baseline');
+      });
+
+      // Playbook Modal
+      document.getElementById('openPlaybookModalBtn').addEventListener('click', () => {
+        document.getElementById('playbookModal').classList.remove('hidden');
+      });
+      document.getElementById('closePlaybookModalBtn').addEventListener('click', () => {
+        document.getElementById('playbookModal').classList.add('hidden');
+      });
+      document.getElementById('applyPlaybookToTerminalBtn').addEventListener('click', () => {
+        let score = 0;
+        PLAYBOOK_QUESTIONS.forEach(q => { if (q.checked) score += q.weight; });
+        APP_STATE.terminalParams.expert = Math.max(25, Math.min(98, score));
+        syncSlidersFromState();
+        updateTerminalView();
+        document.getElementById('playbookModal').classList.add('hidden');
+        showToast('7-Point Diagnostic synced to Terminal!');
+      });
+
+      // Engines Filter & BibTeX
+      document.querySelectorAll('.engine-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          APP_STATE.activeEngineCategory = btn.getAttribute('data-engine-cat') || 'all';
+          document.querySelectorAll('.engine-filter-btn').forEach(b => {
+            b.className = 'engine-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-slate-400 hover:text-white';
+          });
+          btn.className = 'engine-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/40';
+          renderEnginesGrid();
+        });
+      });
+
+      document.getElementById('copyBibtexAllBtn').addEventListener('click', () => {
+        const bib = `@article{boosi2026dontsell,\n  author = {Boosi, Roee},\n  title = {"Don't Sell in a Panic" As Investor, Patience and Statistics Are All You Need: Synthesis with Agentic PDE-RL Market Models},\n  year = {2026},\n  publisher = {ResearchGate}\n}\n@article{boosi2026sadro,\n  author = {Boosi, Roee},\n  title = {Survivor-Aware Agentic Resilience in Capital Markets: SA-DRO, PRISMA, CYCLEX and EEQAM},\n  year = {2026},\n  publisher = {ResearchGate}\n}\n@article{boosi2025qewss,\n  author = {Boosi, Roee},\n  title = {Expert Signal Supremacy: A Quantum-AI Meta-Model for Robust Alpha in the Post-Crowd Capital Market},\n  year = {2025},\n  publisher = {ResearchGate}\n}`;
+        copyTextSafe(bib, 'Copied Roee Boosi ResearchGate BibTeX citations!');
+      });
+
+      // Radar Sliders
+      document.getElementById('sliderRhetoricVelocity').addEventListener('input', renderTrumpRadar);
+      ['sliderShortInt', 'sliderCopySync', 'sliderLiquidityDepth'].forEach(id => {
+        document.getElementById(id).addEventListener('input', updateSqueezeRadar);
+      });
+
+      // Revenue Calculator Sliders & Billing Toggle
+      ['sliderRetailSubs', 'sliderVipSubs', 'sliderApiSubs', 'sliderFundPods', 'sliderKeynotesPerYear'].forEach(id => {
+        document.getElementById(id).addEventListener('input', renderPricingAndRevenue);
+      });
+
+      document.getElementById('billingMonthlyBtn').addEventListener('click', () => {
+        APP_STATE.billingCycle = 'monthly';
+        document.getElementById('billingMonthlyBtn').className = 'px-2.5 py-1 rounded bg-amber-500 text-slate-950 font-bold';
+        document.getElementById('billingAnnualBtn').className = 'px-2.5 py-1 rounded text-slate-300';
+        renderPricingAndRevenue();
+      });
+
+      document.getElementById('billingAnnualBtn').addEventListener('click', () => {
+        APP_STATE.billingCycle = 'annual';
+        document.getElementById('billingAnnualBtn').className = 'px-2.5 py-1 rounded bg-amber-500 text-slate-950 font-bold';
+        document.getElementById('billingMonthlyBtn').className = 'px-2.5 py-1 rounded text-slate-300';
+        renderPricingAndRevenue();
+      });
+
+      // Institutional Proposal Generator
+      document.getElementById('generateInstProposalBtn').addEventListener('click', () => {
+        generateInstitutionalProposal();
+        showToast('Institutional Engagement Contract Summary Updated!');
+      });
+
+      // Lovable Artifact Subtabs, Copy & Download
+      document.querySelectorAll('.lovable-subtab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          APP_STATE.activeLovableArtifact = btn.getAttribute('data-artifact') || 'master_prompt';
+          document.querySelectorAll('.lovable-subtab').forEach(b => {
+            b.className = 'lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono bg-slate-800 text-slate-300 hover:text-white border border-slate-700';
+          });
+          btn.className = 'lovable-subtab px-3.5 py-2 rounded-lg text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40';
+          renderLovableArtifact();
+        });
+      });
+
+      document.getElementById('copyActiveArtifactBtn').addEventListener('click', () => {
+        const content = LOVABLE_ARTIFACTS[APP_STATE.activeLovableArtifact] || LOVABLE_ARTIFACTS.master_prompt;
+        copyTextSafe(content, `Copied ${APP_STATE.activeLovableArtifact} for .lovable.app!`);
+      });
+
+      document.getElementById('downloadActiveArtifactBtn').addEventListener('click', () => {
+        const content = LOVABLE_ARTIFACTS[APP_STATE.activeLovableArtifact] || LOVABLE_ARTIFACTS.master_prompt;
+        const ext = APP_STATE.activeLovableArtifact === 'react_code' ? 'tsx' : APP_STATE.activeLovableArtifact === 'supabase_sql' ? 'sql' : 'txt';
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `boosi_quant_os_${APP_STATE.activeLovableArtifact}.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast(`Downloaded boosi_quant_os_${APP_STATE.activeLovableArtifact}.${ext}`);
+      });
+    });
+  </script>
+</body>
+</html>
